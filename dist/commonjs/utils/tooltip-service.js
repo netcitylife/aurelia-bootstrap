@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.TooltipService = undefined;
 
-var _tether = require('tether');
+var _popper = require('popper.js');
 
-var _tether2 = _interopRequireDefault(_tether);
+var _popper2 = _interopRequireDefault(_popper);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19,28 +19,9 @@ var TooltipService = exports.TooltipService = function () {
     }
 
     TooltipService.prototype.createAttachment = function createAttachment(target, element, position) {
-        var attachment = void 0;
-        var targetAttachment = void 0;
 
-        if (position === 'top') {
-            attachment = 'bottom center';
-            targetAttachment = "top center";
-        } else if (position === 'bottom') {
-            attachment = 'top center';
-            targetAttachment = "bottom center";
-        } else if (position === 'left') {
-            attachment = 'center right';
-            targetAttachment = "center left";
-        } else {
-            attachment = 'center left';
-            targetAttachment = "center right";
-        }
-
-        return new _tether2.default({
-            element: element,
-            target: target,
-            attachment: attachment,
-            targetAttachment: targetAttachment
+        return new _popper2.default(target, element, {
+            placement: position
         });
     };
 

@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['tether'], function (_export, _context) {
+System.register(['popper.js'], function (_export, _context) {
     "use strict";
 
-    var Tether, TooltipService;
+    var Popper, TooltipService;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -12,8 +12,8 @@ System.register(['tether'], function (_export, _context) {
     }
 
     return {
-        setters: [function (_tether) {
-            Tether = _tether.default;
+        setters: [function (_popperJs) {
+            Popper = _popperJs.default;
         }],
         execute: function () {
             _export('TooltipService', TooltipService = function () {
@@ -22,28 +22,9 @@ System.register(['tether'], function (_export, _context) {
                 }
 
                 TooltipService.prototype.createAttachment = function createAttachment(target, element, position) {
-                    var attachment = void 0;
-                    var targetAttachment = void 0;
 
-                    if (position === 'top') {
-                        attachment = 'bottom center';
-                        targetAttachment = "top center";
-                    } else if (position === 'bottom') {
-                        attachment = 'top center';
-                        targetAttachment = "bottom center";
-                    } else if (position === 'left') {
-                        attachment = 'center right';
-                        targetAttachment = "center left";
-                    } else {
-                        attachment = 'center left';
-                        targetAttachment = "center right";
-                    }
-
-                    return new Tether({
-                        element: element,
-                        target: target,
-                        attachment: attachment,
-                        targetAttachment: targetAttachment
+                    return new Popper(target, element, {
+                        placement: position
                     });
                 };
 

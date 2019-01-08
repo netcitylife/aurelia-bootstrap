@@ -1,31 +1,32 @@
-import Tether from 'tether';
+import Popper from 'popper.js';
 
 export class TooltipService{
 
     createAttachment(target, element, position) {
-        let attachment;
-        let targetAttachment;
 
-        if (position === 'top') {
-            attachment = 'bottom center';
-            targetAttachment = "top center";
-        } else if (position === 'bottom') {
-            attachment = 'top center';
-            targetAttachment = "bottom center";
-        } else if (position === 'left') {
-            attachment = 'center right';
-            targetAttachment = "center left";
-        } else {
-            attachment = 'center left';
-            targetAttachment = "center right";
-        }
-
-        return new Tether({
-            element: element,
-            target: target,
-            attachment: attachment,
-            targetAttachment: targetAttachment
-        });
+        return new Popper(target, element, {
+            placement: position,
+            /*modifiers: {
+                offset: {
+                    offset: this.config.offset
+                },
+                flip: {
+                    behavior: this.config.fallbackPlacement
+                },
+                arrow: {
+                    element: '.arrow'
+                },
+                preventOverflow: {
+                    boundariesElement: this.config.boundary
+                }
+            },
+            onCreate: (data) => {
+                if (data.originalPlacement !== data.placement) {
+                    this._handlePopperPlacementChange(data)
+                }
+            },
+            onUpdate: (data) => this._handlePopperPlacementChange(data)*/
+        })
     }
     
     setTriggers(element, triggers, listeners){
