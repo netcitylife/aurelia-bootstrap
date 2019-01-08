@@ -263,7 +263,7 @@ var AubsPopoverCustomAttribute = exports.AubsPopoverCustomAttribute = (_dec = (0
     };
 
     AubsPopoverCustomAttribute.prototype.getPositionClass = function getPositionClass(position) {
-        return (_bootstrapOptions.bootstrapOptions.version === 4 ? 'popover-' : '') + position;
+        return (_bootstrapOptions.bootstrapOptions.version === 4 ? 'bs-popover-' : '') + position;
     };
 
     AubsPopoverCustomAttribute.prototype.createPopover = function createPopover() {
@@ -294,17 +294,15 @@ var AubsPopoverCustomAttribute = exports.AubsPopoverCustomAttribute = (_dec = (0
 
             if (this.title) {
                 this.titleElement = document.createElement('h3');
-                this.titleElement.classList.add('popover-title');
+                this.titleElement.classList.add('popover-' + (_bootstrapOptions.bootstrapOptions.version === 4 ? 'header' : 'title'));
                 this.titleElement.innerHTML = this.title;
                 this.popover.appendChild(this.titleElement);
             }
 
-            var content = document.createElement('div');
-            content.classList.add('popover-content');
-            this.bodyElement = document.createElement('p');
+            this.bodyElement = document.createElement('div');
+            this.bodyElement.classList.add('popover-' + (_bootstrapOptions.bootstrapOptions.version === 4 ? 'body' : 'content'));
             this.bodyElement.innerHTML = this.body;
-            content.appendChild(this.bodyElement);
-            this.popover.appendChild(content);
+            this.popover.appendChild(this.bodyElement);
 
             document.body.appendChild(this.popover);
 

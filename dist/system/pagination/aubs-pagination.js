@@ -100,6 +100,8 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
                     if (this.pageSize === undefined || this.pageSize === null || this.pageSize < 1) {
                         this.pageSize = 5;
                     }
+
+                    this.calculatePages();
                 };
 
                 AubsPaginationCustomElement.prototype.totalItemsChanged = function totalItemsChanged() {

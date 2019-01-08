@@ -234,7 +234,7 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
     }
 
     getPositionClass(position) {
-        return (bootstrapOptions.version === 4 ? 'popover-' : '') + position;
+        return (bootstrapOptions.version === 4 ? 'bs-popover-' : '') + position;
     }
 
     createPopover() {
@@ -265,17 +265,15 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
 
             if (this.title) {
                 this.titleElement = document.createElement('h3');
-                this.titleElement.classList.add('popover-title');
+                this.titleElement.classList.add('popover-' + (bootstrapOptions.version === 4 ? 'header' : 'title'));
                 this.titleElement.innerHTML = this.title;
                 this.popover.appendChild(this.titleElement);
             }
 
-            let content = document.createElement('div');
-            content.classList.add('popover-content');
-            this.bodyElement = document.createElement('p');
+            this.bodyElement = document.createElement('div');
+            this.bodyElement.classList.add('popover-' + (bootstrapOptions.version === 4 ? 'body' : 'content'));
             this.bodyElement.innerHTML = this.body;
-            content.appendChild(this.bodyElement);
-            this.popover.appendChild(content);
+            this.popover.appendChild(this.bodyElement);
 
             document.body.appendChild(this.popover);
 
