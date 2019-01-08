@@ -130,8 +130,8 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
             document.body.removeChild(this.tooltip);
         }
 
-        if (this.tether) {
-            this.tether.destroy();
+        if (this.popper) {
+            this.popper.destroy();
         }
     };
 
@@ -184,7 +184,7 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
         }
 
         this.tooltip.style.display = 'block';
-        this.tether.position();
+        this.popper.update();
 
         (0, _velocityAnimate2.default)(this.tooltip, 'stop').then(function () {
             (0, _velocityAnimate2.default)(_this2.tooltip, 'fadeIn').then(function () {
@@ -245,11 +245,11 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
 
         document.body.appendChild(this.tooltip);
 
-        if (this.tether) {
-            this.tether.destroy();
+        if (this.popper) {
+            this.popper.destroy();
         }
 
-        this.tether = this.tooltipService.createAttachment(this.element, this.tooltip, this.position, '.' + (_bootstrapOptions.bootstrapOptions.version === 4 ? '' : 'tooltip-') + 'arrow');
+        this.popper = this.tooltipService.createAttachment(this.element, this.tooltip, this.position, '.' + (_bootstrapOptions.bootstrapOptions.version === 4 ? '' : 'tooltip-') + 'arrow');
     };
 
     AubsTooltipCustomAttribute.prototype.parseClassList = function parseClassList() {

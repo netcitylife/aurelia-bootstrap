@@ -119,8 +119,8 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
             }
         }
 
-        if (this.tether) {
-            this.tether.destroy();
+        if (this.popper) {
+            this.popper.destroy();
         }
     }
 
@@ -180,15 +180,15 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
         }
 
         if (this.customPopover) {
-            if (this.tether) {
-                this.tether.destroy();
+            if (this.popper) {
+                this.popper.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
+            this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
 
         this.popover.style.display = 'block';
-        this.tether.position();
+        this.popper.update();
 
         velocity(this.popover, 'stop').then(() => {
             velocity(this.popover, 'fadeIn').then(() => {
@@ -277,11 +277,11 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
 
             document.body.appendChild(this.popover);
 
-            if (this.tether) {
-                this.tether.destroy();
+            if (this.popper) {
+                this.popper.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
+            this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
     }
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "title", [bindable], {

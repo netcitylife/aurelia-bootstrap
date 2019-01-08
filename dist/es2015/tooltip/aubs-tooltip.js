@@ -105,8 +105,8 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
             document.body.removeChild(this.tooltip);
         }
 
-        if (this.tether) {
-            this.tether.destroy();
+        if (this.popper) {
+            this.popper.destroy();
         }
     }
 
@@ -157,7 +157,7 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
         }
 
         this.tooltip.style.display = 'block';
-        this.tether.position();
+        this.popper.update();
 
         velocity(this.tooltip, 'stop').then(() => {
             velocity(this.tooltip, 'fadeIn').then(() => {
@@ -212,11 +212,11 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
 
         document.body.appendChild(this.tooltip);
 
-        if (this.tether) {
-            this.tether.destroy();
+        if (this.popper) {
+            this.popper.destroy();
         }
 
-        this.tether = this.tooltipService.createAttachment(this.element, this.tooltip, this.position, '.' + (bootstrapOptions.version === 4 ? '' : 'tooltip-') + 'arrow');
+        this.popper = this.tooltipService.createAttachment(this.element, this.tooltip, this.position, '.' + (bootstrapOptions.version === 4 ? '' : 'tooltip-') + 'arrow');
     }
 
     parseClassList() {

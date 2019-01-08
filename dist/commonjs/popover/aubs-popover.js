@@ -144,8 +144,8 @@ var AubsPopoverCustomAttribute = exports.AubsPopoverCustomAttribute = (_dec = (0
             }
         }
 
-        if (this.tether) {
-            this.tether.destroy();
+        if (this.popper) {
+            this.popper.destroy();
         }
     };
 
@@ -207,15 +207,15 @@ var AubsPopoverCustomAttribute = exports.AubsPopoverCustomAttribute = (_dec = (0
         }
 
         if (this.customPopover) {
-            if (this.tether) {
-                this.tether.destroy();
+            if (this.popper) {
+                this.popper.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
+            this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
 
         this.popover.style.display = 'block';
-        this.tether.position();
+        this.popper.update();
 
         (0, _velocityAnimate2.default)(this.popover, 'stop').then(function () {
             (0, _velocityAnimate2.default)(_this2.popover, 'fadeIn').then(function () {
@@ -306,11 +306,11 @@ var AubsPopoverCustomAttribute = exports.AubsPopoverCustomAttribute = (_dec = (0
 
             document.body.appendChild(this.popover);
 
-            if (this.tether) {
-                this.tether.destroy();
+            if (this.popper) {
+                this.popper.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
+            this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
     };
 

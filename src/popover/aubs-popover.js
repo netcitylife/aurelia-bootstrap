@@ -72,8 +72,8 @@ export class AubsPopoverCustomAttribute {
             }
         }
 
-        if (this.tether) {
-            this.tether.destroy();
+        if (this.popper) {
+            this.popper.destroy();
         }
     }
 
@@ -133,15 +133,15 @@ export class AubsPopoverCustomAttribute {
         }
 
         if (this.customPopover) {
-            if (this.tether) {
-                this.tether.destroy();
+            if (this.popper) {
+                this.popper.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
+            this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
 
         this.popover.style.display = 'block';
-        this.tether.position();
+        this.popper.update();
 
         velocity(this.popover, 'stop')
             .then(() => {
@@ -235,11 +235,11 @@ export class AubsPopoverCustomAttribute {
 
             document.body.appendChild(this.popover);
 
-            if (this.tether) {
-                this.tether.destroy();
+            if (this.popper) {
+                this.popper.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
+            this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
     }
 }
