@@ -249,7 +249,7 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
             this.tether.destroy();
         }
 
-        this.tether = this.tooltipService.createAttachment(this.element, this.tooltip, this.position);
+        this.tether = this.tooltipService.createAttachment(this.element, this.tooltip, this.position, '.' + (_bootstrapOptions.bootstrapOptions.version === 4 ? '' : 'tooltip-') + 'arrow');
     };
 
     AubsTooltipCustomAttribute.prototype.parseClassList = function parseClassList() {

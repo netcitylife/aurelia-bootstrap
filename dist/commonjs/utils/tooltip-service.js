@@ -18,10 +18,15 @@ var TooltipService = exports.TooltipService = function () {
         _classCallCheck(this, TooltipService);
     }
 
-    TooltipService.prototype.createAttachment = function createAttachment(target, element, position) {
+    TooltipService.prototype.createAttachment = function createAttachment(target, element, position, arrow) {
 
         return new _popper2.default(target, element, {
-            placement: position
+            placement: position,
+            modifiers: {
+                arrow: {
+                    element: arrow
+                }
+            }
         });
     };
 

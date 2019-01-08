@@ -2,25 +2,25 @@ import Popper from 'popper.js';
 
 export class TooltipService{
 
-    createAttachment(target, element, position) {
+    createAttachment(target, element, position, arrow) {
 
         return new Popper(target, element, {
             placement: position,
-            /*modifiers: {
-                offset: {
+            modifiers: {
+                /*offset: {
                     offset: this.config.offset
                 },
                 flip: {
                     behavior: this.config.fallbackPlacement
-                },
+                },*/
                 arrow: {
-                    element: '.arrow'
+                    element: arrow
                 },
-                preventOverflow: {
+                /*preventOverflow: {
                     boundariesElement: this.config.boundary
-                }
+                }*/
             },
-            onCreate: (data) => {
+            /*onCreate: (data) => {
                 if (data.originalPlacement !== data.placement) {
                     this._handlePopperPlacementChange(data)
                 }

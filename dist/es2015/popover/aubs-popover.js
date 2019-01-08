@@ -184,7 +184,7 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
                 this.tether.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position);
+            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
 
         this.popover.style.display = 'block';
@@ -281,7 +281,7 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
                 this.tether.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position);
+            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
     }
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "title", [bindable], {

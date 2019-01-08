@@ -137,7 +137,7 @@ export class AubsPopoverCustomAttribute {
                 this.tether.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position);
+            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
 
         this.popover.style.display = 'block';
@@ -239,7 +239,7 @@ export class AubsPopoverCustomAttribute {
                 this.tether.destroy();
             }
 
-            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position);
+            this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
     }
 }

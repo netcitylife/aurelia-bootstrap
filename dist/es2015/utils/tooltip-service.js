@@ -2,10 +2,15 @@ import Popper from 'popper.js';
 
 export let TooltipService = class TooltipService {
 
-    createAttachment(target, element, position) {
+    createAttachment(target, element, position, arrow) {
 
         return new Popper(target, element, {
-            placement: position
+            placement: position,
+            modifiers: {
+                arrow: {
+                    element: arrow
+                }
+            }
         });
     }
 

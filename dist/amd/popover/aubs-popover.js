@@ -212,7 +212,7 @@ define(["exports", "aurelia-framework", "../utils/tooltip-service", "../utils/bo
                     this.tether.destroy();
                 }
 
-                this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position);
+                this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
             }
 
             this.popover.style.display = 'block';
@@ -311,7 +311,7 @@ define(["exports", "aurelia-framework", "../utils/tooltip-service", "../utils/bo
                     this.tether.destroy();
                 }
 
-                this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position);
+                this.tether = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
             }
         };
 

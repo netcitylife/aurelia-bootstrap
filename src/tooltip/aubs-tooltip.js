@@ -169,7 +169,7 @@ export class AubsTooltipCustomAttribute {
             this.tether.destroy();
         }
 
-        this.tether = this.tooltipService.createAttachment(this.element, this.tooltip, this.position);
+        this.tether = this.tooltipService.createAttachment(this.element, this.tooltip, this.position, '.' + (bootstrapOptions.version === 4 ? '' : 'tooltip-') + 'arrow');
     }
 
     parseClassList() {
