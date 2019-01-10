@@ -34,7 +34,7 @@ export class AubsDropdownCustomAttribute {
         this.setListener();
     }
 
-    setListener(){
+    setListener() {
         if (this.autoClose !== 'disabled') {
             document.addEventListener('click', this.outsideClickListener)
         }
@@ -46,12 +46,12 @@ export class AubsDropdownCustomAttribute {
         }
     }
 
-    autoCloseChanged(newValue, oldValue){
-        if(!this.isAttached){
+    autoCloseChanged(newValue, oldValue) {
+        if (!this.isAttached) {
             return;
         }
 
-        if(oldValue !== 'disabled'){
+        if (oldValue !== 'disabled') {
             this.detached();
         }
 
@@ -71,8 +71,8 @@ export class AubsDropdownCustomAttribute {
             this.isOpen = !this.state;
         }
         this.state = !this.state;
-        
-        if(typeof  this.onToggle === 'function') {
+
+        if (typeof this.onToggle === 'function') {
             this.onToggle({open: this.state});
         }
 
@@ -80,7 +80,7 @@ export class AubsDropdownCustomAttribute {
     }
 
     handleBlur(evt) {
-        if(!this.state){
+        if (!this.state) {
             return;
         }
 
@@ -89,20 +89,21 @@ export class AubsDropdownCustomAttribute {
         }
     }
 
-    isMenuItem(evt){
-        if(bootstrapOptions.version === 4){
+    isMenuItem(evt) {
+        if (bootstrapOptions.version === 4) {
             return evt.target.classList.contains('dropdown-item');
-        }else{
+        } else {
             return evt.target.parentNode.parentNode.classList.contains('dropdown-menu');
         }
 
     }
 
     setClass() {
-        if (this.state) {
-            this.element.classList.add(this.showClass);
-        } else {
-            this.element.classList.remove(this.showClass);
+        this.element.classList.toggle(this.showClass, this.state);
+
+        // Bootstrap 4 also requires "show" on .dropdown-menu
+        if (bootstrapOptions.version === 4) {
+            this.element.querySelector('.dropdown-menu').classList.toggle(this.showClass, this.state);
         }
     }
 
