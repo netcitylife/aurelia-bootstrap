@@ -163,10 +163,10 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
                 };
 
                 AubsDropdownCustomAttribute.prototype.setClass = function setClass() {
-                    if (this.state) {
-                        this.element.classList.add(this.showClass);
-                    } else {
-                        this.element.classList.remove(this.showClass);
+                    this.element.classList.toggle(this.showClass, this.state);
+
+                    if (bootstrapOptions.version === 4) {
+                        this.element.querySelector('.dropdown-menu').classList.toggle(this.showClass, this.state);
                     }
                 };
 

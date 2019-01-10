@@ -157,10 +157,10 @@ define(["exports", "aurelia-framework", "../utils/bootstrap-options"], function 
         };
 
         AubsDropdownCustomAttribute.prototype.setClass = function setClass() {
-            if (this.state) {
-                this.element.classList.add(this.showClass);
-            } else {
-                this.element.classList.remove(this.showClass);
+            this.element.classList.toggle(this.showClass, this.state);
+
+            if (_bootstrapOptions.bootstrapOptions.version === 4) {
+                this.element.querySelector('.dropdown-menu').classList.toggle(this.showClass, this.state);
             }
         };
 
