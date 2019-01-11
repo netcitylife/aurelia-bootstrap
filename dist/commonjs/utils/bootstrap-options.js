@@ -20,7 +20,6 @@ var bootstrapOptions = exports.bootstrapOptions = {
     popoverTrigger: 'mouseover',
     tabsetType: 'tabs',
     tabsetVertical: false,
-    tooltipClass: 'tooltip',
     tooltipPosition: 'top',
     tooltipTrigger: 'mouseover'
 };

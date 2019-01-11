@@ -55,7 +55,7 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
+    var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5;
 
     var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element, _tooltipService.TooltipService), _dec2 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = (_class2 = function () {
         function AubsTooltipCustomAttribute(element, tooltipService) {
@@ -72,8 +72,6 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
             _initDefineProp(this, 'open', _descriptor4, this);
 
             _initDefineProp(this, 'trigger', _descriptor5, this);
-
-            _initDefineProp(this, 'class', _descriptor6, this);
 
             this.triggers = [];
             this.validPositions = ['top', 'bottom', 'left', 'right'];
@@ -175,7 +173,6 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
                 this.valuesChanged = false;
             }
 
-            this.tooltip.style.display = 'block';
             this.popper.update();
 
             this.tooltip.classList.add(this.showClass);
@@ -202,16 +199,13 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
         };
 
         AubsTooltipCustomAttribute.prototype.createTooltip = function createTooltip() {
-            var _this2 = this;
-
             if (this.tooltip) {
                 document.body.removeChild(this.tooltip);
             }
 
             this.tooltip = document.createElement('div');
-            this.parseClassList().forEach(function (next) {
-                return _this2.tooltip.classList.add(next.trim());
-            });
+            this.tooltip.classList.add('tooltip');
+            this.tooltip.classList.add('fade');
 
             this.tooltip.classList.add((_bootstrapOptions.bootstrapOptions.version === 4 ? 'bs-tooltip-' : '') + this.position);
             this.tooltip.setAttribute('role', 'tooltip');
@@ -232,14 +226,6 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
             }
 
             this.popper = this.tooltipService.createAttachment(this.element, this.tooltip, this.position, '.' + (_bootstrapOptions.bootstrapOptions.version === 4 ? '' : 'tooltip-') + 'arrow');
-        };
-
-        AubsTooltipCustomAttribute.prototype.parseClassList = function parseClassList() {
-            if (!this.class || this.class.length === 0) {
-                return ['tooltip'];
-            }
-
-            return this.class.split(',');
         };
 
         return AubsTooltipCustomAttribute;
@@ -265,11 +251,6 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.tooltipTrigger;
-        }
-    }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, 'class', [_aureliaFramework.bindable], {
-        enumerable: true,
-        initializer: function initializer() {
-            return _bootstrapOptions.bootstrapOptions.tooltipClass;
         }
     })), _class2)) || _class);
 });

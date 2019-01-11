@@ -24,7 +24,6 @@ System.register([], function (_export, _context) {
                 popoverTrigger: 'mouseover',
                 tabsetType: 'tabs',
                 tabsetVertical: false,
-                tooltipClass: 'tooltip',
                 tooltipPosition: 'top',
                 tooltipTrigger: 'mouseover'
             });

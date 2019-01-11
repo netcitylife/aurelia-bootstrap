@@ -186,7 +186,6 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
             this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
 
-        this.popover.style.display = 'block';
         this.popper.update();
 
         if (typeof this.onToggle === 'function') {
@@ -236,6 +235,7 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
             this.popover.classList.remove(this.getPositionClass(this.oldPosition));
 
             this.popover.classList.add('popover');
+            this.popover.classList.add('fade');
             this.popover.classList.add(this.getPositionClass(this.position));
 
             if (!this.popover.querySelector('.arrow')) {
@@ -248,6 +248,7 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
 
             this.popover = document.createElement('div');
             this.popover.classList.add('popover');
+            this.popover.classList.add('fade');
             this.popover.classList.add(this.getPositionClass(this.position));
 
             this.popover.appendChild(arrow);

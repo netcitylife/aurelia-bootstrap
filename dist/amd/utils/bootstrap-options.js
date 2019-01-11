@@ -21,7 +21,6 @@ define(['exports'], function (exports) {
         popoverTrigger: 'mouseover',
         tabsetType: 'tabs',
         tabsetVertical: false,
-        tooltipClass: 'tooltip',
         tooltipPosition: 'top',
         tooltipTrigger: 'mouseover'
     };
