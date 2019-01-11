@@ -1,9 +1,9 @@
 "use strict";
 
-System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/bootstrap-options", "velocity-animate"], function (_export, _context) {
+System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/bootstrap-options"], function (_export, _context) {
     "use strict";
 
-    var bindable, bindingMode, inject, TooltipService, bootstrapOptions, velocity, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, AubsPopoverCustomAttribute;
+    var bindable, bindingMode, inject, TooltipService, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, AubsPopoverCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -63,8 +63,6 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
             TooltipService = _utilsTooltipService.TooltipService;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
-        }, function (_velocityAnimate) {
-            velocity = _velocityAnimate.default;
         }],
         execute: function () {
             _export("AubsPopoverCustomAttribute", AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = function () {
@@ -220,15 +218,12 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
                     this.popover.style.display = 'block';
                     this.popper.update();
 
-                    velocity(this.popover, 'stop').then(function () {
-                        velocity(_this2.popover, 'fadeIn').then(function () {
-                            _this2.popover.classList.add(_this2.showClass);
-
-                            if (typeof _this2.onToggle === 'function') {
-                                _this2.onToggle({ open: true });
-                            }
+                    if (typeof this.onToggle === 'function') {
+                        this.tooltipService.onTransitionEnd(this.popover, function () {
+                            return _this2.onToggle({ open: true });
                         });
-                    });
+                    }
+                    this.popover.classList.add(this.showClass);
 
                     this.visible = true;
                     this.isOpen = true;
@@ -241,15 +236,12 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
                         return;
                     }
 
-                    velocity(this.popover, 'stop').then(function () {
-                        velocity(_this3.popover, 'fadeOut').then(function () {
-                            _this3.popover.classList.remove(_this3.showClass);
-
-                            if (typeof _this3.onToggle === 'function') {
-                                _this3.onToggle({ open: false });
-                            }
+                    if (typeof this.onToggle === 'function') {
+                        this.tooltipService.onTransitionEnd(this.popover, function () {
+                            return _this3.onToggle({ open: false });
                         });
-                    });
+                    }
+                    this.popover.classList.remove(this.showClass);
 
                     this.visible = false;
                     this.isOpen = false;

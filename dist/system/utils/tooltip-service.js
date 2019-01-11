@@ -75,6 +75,14 @@ System.register(['popper.js'], function (_export, _context) {
                     }
                 };
 
+                TooltipService.prototype.onTransitionEnd = function onTransitionEnd(element, callback) {
+                    var cb = function cb() {
+                        callback();
+                        element.removeEventListener('transitionend', cb);
+                    };
+                    element.addEventListener('transitionend', cb);
+                };
+
                 return TooltipService;
             }());
 

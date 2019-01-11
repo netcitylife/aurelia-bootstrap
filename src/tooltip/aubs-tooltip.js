@@ -1,7 +1,6 @@
 import {bindable, inject, bindingMode} from 'aurelia-framework';
 import {TooltipService} from '../utils/tooltip-service';
 import {bootstrapOptions} from '../utils/bootstrap-options';
-import velocity from 'velocity-animate';
 
 @inject(Element, TooltipService)
 export class AubsTooltipCustomAttribute {
@@ -17,6 +16,7 @@ export class AubsTooltipCustomAttribute {
     validPositions = ['top', 'bottom', 'left', 'right'];
     valuesChanged = false;
     visible = false;
+    showClass;
 
     constructor(element, tooltipService) {
         this.element = element;
@@ -38,6 +38,7 @@ export class AubsTooltipCustomAttribute {
         }
 
         this.triggers = this.trigger.split(' ');
+        this.showClass = bootstrapOptions.version === 4 ? 'show' : 'in';
     }
 
     attached() {
@@ -110,13 +111,7 @@ export class AubsTooltipCustomAttribute {
         this.tooltip.style.display = 'block';
         this.popper.update();
 
-        velocity(this.tooltip, 'stop')
-            .then(() => {
-                velocity(this.tooltip, 'fadeIn').then(() => {
-                    this.tooltip.classList.add('in');
-                });
-            });
-
+        this.tooltip.classList.add(this.showClass);
 
         this.visible = true;
         this.open = true;
@@ -127,11 +122,7 @@ export class AubsTooltipCustomAttribute {
             return;
         }
 
-        velocity(this.tooltip, 'stop').then(() => {
-            velocity(this.tooltip, 'fadeOut').then(() => {
-                this.tooltip.classList.remove('in');
-            });
-        });
+        this.tooltip.classList.remove(this.showClass);
 
         this.visible = false;
         this.open = false;

@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/bootstrap-options', 'velocity-animate'], function (_export, _context) {
+System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/bootstrap-options'], function (_export, _context) {
     "use strict";
 
-    var bindable, inject, bindingMode, TooltipService, bootstrapOptions, velocity, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, AubsTooltipCustomAttribute;
+    var bindable, inject, bindingMode, TooltipService, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, AubsTooltipCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -63,8 +63,6 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
             TooltipService = _utilsTooltipService.TooltipService;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
-        }, function (_velocityAnimate) {
-            velocity = _velocityAnimate.default;
         }],
         execute: function () {
             _export('AubsTooltipCustomAttribute', AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = function () {
@@ -115,6 +113,7 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
                     }
 
                     this.triggers = this.trigger.split(' ');
+                    this.showClass = bootstrapOptions.version === 4 ? 'show' : 'in';
                 };
 
                 AubsTooltipCustomAttribute.prototype.attached = function attached() {
@@ -175,8 +174,6 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
                 };
 
                 AubsTooltipCustomAttribute.prototype.handleShow = function handleShow() {
-                    var _this2 = this;
-
                     if (this.visible || this.disabled) {
                         return;
                     }
@@ -189,28 +186,18 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
                     this.tooltip.style.display = 'block';
                     this.popper.update();
 
-                    velocity(this.tooltip, 'stop').then(function () {
-                        velocity(_this2.tooltip, 'fadeIn').then(function () {
-                            _this2.tooltip.classList.add('in');
-                        });
-                    });
+                    this.tooltip.classList.add(this.showClass);
 
                     this.visible = true;
                     this.open = true;
                 };
 
                 AubsTooltipCustomAttribute.prototype.handleHide = function handleHide() {
-                    var _this3 = this;
-
                     if (!this.visible) {
                         return;
                     }
 
-                    velocity(this.tooltip, 'stop').then(function () {
-                        velocity(_this3.tooltip, 'fadeOut').then(function () {
-                            _this3.tooltip.classList.remove('in');
-                        });
-                    });
+                    this.tooltip.classList.remove(this.showClass);
 
                     this.visible = false;
                     this.open = false;
@@ -223,7 +210,7 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
                 };
 
                 AubsTooltipCustomAttribute.prototype.createTooltip = function createTooltip() {
-                    var _this4 = this;
+                    var _this2 = this;
 
                     if (this.tooltip) {
                         document.body.removeChild(this.tooltip);
@@ -231,7 +218,7 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
 
                     this.tooltip = document.createElement('div');
                     this.parseClassList().forEach(function (next) {
-                        return _this4.tooltip.classList.add(next.trim());
+                        return _this2.tooltip.classList.add(next.trim());
                     });
 
                     this.tooltip.classList.add((bootstrapOptions.version === 4 ? 'bs-tooltip-' : '') + this.position);

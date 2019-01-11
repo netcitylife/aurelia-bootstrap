@@ -46,7 +46,6 @@ function _initializerWarningHelper(descriptor, context) {
 import { bindable, inject, bindingMode } from 'aurelia-framework';
 import { TooltipService } from '../utils/tooltip-service';
 import { bootstrapOptions } from '../utils/bootstrap-options';
-import velocity from 'velocity-animate';
 
 export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = class AubsTooltipCustomAttribute {
 
@@ -87,6 +86,7 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
         }
 
         this.triggers = this.trigger.split(' ');
+        this.showClass = bootstrapOptions.version === 4 ? 'show' : 'in';
     }
 
     attached() {
@@ -159,11 +159,7 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
         this.tooltip.style.display = 'block';
         this.popper.update();
 
-        velocity(this.tooltip, 'stop').then(() => {
-            velocity(this.tooltip, 'fadeIn').then(() => {
-                this.tooltip.classList.add('in');
-            });
-        });
+        this.tooltip.classList.add(this.showClass);
 
         this.visible = true;
         this.open = true;
@@ -174,11 +170,7 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
             return;
         }
 
-        velocity(this.tooltip, 'stop').then(() => {
-            velocity(this.tooltip, 'fadeOut').then(() => {
-                this.tooltip.classList.remove('in');
-            });
-        });
+        this.tooltip.classList.remove(this.showClass);
 
         this.visible = false;
         this.open = false;

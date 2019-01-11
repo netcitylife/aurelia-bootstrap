@@ -1,7 +1,6 @@
 import {bindable, bindingMode, inject} from "aurelia-framework";
 import {TooltipService} from "../utils/tooltip-service";
 import {bootstrapOptions} from "../utils/bootstrap-options";
-import velocity from "velocity-animate";
 
 @inject(Element, TooltipService)
 export class AubsPopoverCustomAttribute {
@@ -143,21 +142,13 @@ export class AubsPopoverCustomAttribute {
         this.popover.style.display = 'block';
         this.popper.update();
 
-        velocity(this.popover, 'stop')
-            .then(() => {
-                velocity(this.popover, 'fadeIn')
-                    .then(() => {
-                        this.popover.classList.add(this.showClass);
-
-                        if (typeof this.onToggle === 'function') {
-                            this.onToggle({open: true});
-                        }
-                    });
-            });
+        if (typeof this.onToggle === 'function') {
+            this.tooltipService.onTransitionEnd(this.popover, () => this.onToggle({open: true}));
+        }
+        this.popover.classList.add(this.showClass);
 
         this.visible = true;
         this.isOpen = true;
-
     }
 
     handleHide() {
@@ -165,17 +156,10 @@ export class AubsPopoverCustomAttribute {
             return;
         }
 
-        velocity(this.popover, 'stop')
-            .then(() => {
-                velocity(this.popover, 'fadeOut')
-                    .then(() => {
-                        this.popover.classList.remove(this.showClass);
-
-                        if (typeof this.onToggle === 'function') {
-                            this.onToggle({open: false});
-                        }
-                    });
-            });
+        if (typeof this.onToggle === 'function') {
+            this.tooltipService.onTransitionEnd(this.popover, () => this.onToggle({open: false}));
+        }
+        this.popover.classList.remove(this.showClass);
 
         this.visible = false;
         this.isOpen = false;

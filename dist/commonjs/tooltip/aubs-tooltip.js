@@ -13,12 +13,6 @@ var _tooltipService = require('../utils/tooltip-service');
 
 var _bootstrapOptions = require('../utils/bootstrap-options');
 
-var _velocityAnimate = require('velocity-animate');
-
-var _velocityAnimate2 = _interopRequireDefault(_velocityAnimate);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
     Object.defineProperty(target, property, {
@@ -112,6 +106,7 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
         }
 
         this.triggers = this.trigger.split(' ');
+        this.showClass = _bootstrapOptions.bootstrapOptions.version === 4 ? 'show' : 'in';
     };
 
     AubsTooltipCustomAttribute.prototype.attached = function attached() {
@@ -172,8 +167,6 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
     };
 
     AubsTooltipCustomAttribute.prototype.handleShow = function handleShow() {
-        var _this2 = this;
-
         if (this.visible || this.disabled) {
             return;
         }
@@ -186,28 +179,18 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
         this.tooltip.style.display = 'block';
         this.popper.update();
 
-        (0, _velocityAnimate2.default)(this.tooltip, 'stop').then(function () {
-            (0, _velocityAnimate2.default)(_this2.tooltip, 'fadeIn').then(function () {
-                _this2.tooltip.classList.add('in');
-            });
-        });
+        this.tooltip.classList.add(this.showClass);
 
         this.visible = true;
         this.open = true;
     };
 
     AubsTooltipCustomAttribute.prototype.handleHide = function handleHide() {
-        var _this3 = this;
-
         if (!this.visible) {
             return;
         }
 
-        (0, _velocityAnimate2.default)(this.tooltip, 'stop').then(function () {
-            (0, _velocityAnimate2.default)(_this3.tooltip, 'fadeOut').then(function () {
-                _this3.tooltip.classList.remove('in');
-            });
-        });
+        this.tooltip.classList.remove(this.showClass);
 
         this.visible = false;
         this.open = false;
@@ -220,7 +203,7 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
     };
 
     AubsTooltipCustomAttribute.prototype.createTooltip = function createTooltip() {
-        var _this4 = this;
+        var _this2 = this;
 
         if (this.tooltip) {
             document.body.removeChild(this.tooltip);
@@ -228,7 +211,7 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
 
         this.tooltip = document.createElement('div');
         this.parseClassList().forEach(function (next) {
-            return _this4.tooltip.classList.add(next.trim());
+            return _this2.tooltip.classList.add(next.trim());
         });
 
         this.tooltip.classList.add((_bootstrapOptions.bootstrapOptions.version === 4 ? 'bs-tooltip-' : '') + this.position);

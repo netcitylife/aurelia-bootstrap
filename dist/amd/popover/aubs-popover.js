@@ -1,18 +1,10 @@
-define(["exports", "aurelia-framework", "../utils/tooltip-service", "../utils/bootstrap-options", "velocity-animate"], function (exports, _aureliaFramework, _tooltipService, _bootstrapOptions, _velocityAnimate) {
+define(["exports", "aurelia-framework", "../utils/tooltip-service", "../utils/bootstrap-options"], function (exports, _aureliaFramework, _tooltipService, _bootstrapOptions) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
     exports.AubsPopoverCustomAttribute = undefined;
-
-    var _velocityAnimate2 = _interopRequireDefault(_velocityAnimate);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -218,15 +210,12 @@ define(["exports", "aurelia-framework", "../utils/tooltip-service", "../utils/bo
             this.popover.style.display = 'block';
             this.popper.update();
 
-            (0, _velocityAnimate2.default)(this.popover, 'stop').then(function () {
-                (0, _velocityAnimate2.default)(_this2.popover, 'fadeIn').then(function () {
-                    _this2.popover.classList.add(_this2.showClass);
-
-                    if (typeof _this2.onToggle === 'function') {
-                        _this2.onToggle({ open: true });
-                    }
+            if (typeof this.onToggle === 'function') {
+                this.tooltipService.onTransitionEnd(this.popover, function () {
+                    return _this2.onToggle({ open: true });
                 });
-            });
+            }
+            this.popover.classList.add(this.showClass);
 
             this.visible = true;
             this.isOpen = true;
@@ -239,15 +228,12 @@ define(["exports", "aurelia-framework", "../utils/tooltip-service", "../utils/bo
                 return;
             }
 
-            (0, _velocityAnimate2.default)(this.popover, 'stop').then(function () {
-                (0, _velocityAnimate2.default)(_this3.popover, 'fadeOut').then(function () {
-                    _this3.popover.classList.remove(_this3.showClass);
-
-                    if (typeof _this3.onToggle === 'function') {
-                        _this3.onToggle({ open: false });
-                    }
+            if (typeof this.onToggle === 'function') {
+                this.tooltipService.onTransitionEnd(this.popover, function () {
+                    return _this3.onToggle({ open: false });
                 });
-            });
+            }
+            this.popover.classList.remove(this.showClass);
 
             this.visible = false;
             this.isOpen = false;

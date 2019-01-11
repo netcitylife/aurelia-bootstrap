@@ -70,4 +70,12 @@ export class TooltipService{
             }
         }
     }
+
+    onTransitionEnd(element, callback) {
+        let cb = () => {
+            callback();
+            element.removeEventListener('transitionend', cb);
+        };
+        element.addEventListener('transitionend', cb);
+    }
 }

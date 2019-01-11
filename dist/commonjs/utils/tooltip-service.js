@@ -72,5 +72,13 @@ var TooltipService = exports.TooltipService = function () {
         }
     };
 
+    TooltipService.prototype.onTransitionEnd = function onTransitionEnd(element, callback) {
+        var cb = function cb() {
+            callback();
+            element.removeEventListener('transitionend', cb);
+        };
+        element.addEventListener('transitionend', cb);
+    };
+
     return TooltipService;
 }();
