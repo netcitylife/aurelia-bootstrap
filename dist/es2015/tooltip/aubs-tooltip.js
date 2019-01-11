@@ -154,6 +154,7 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
             this.valuesChanged = false;
         }
 
+        this.tooltip.style.display = 'block';
         this.popper.update();
 
         this.tooltip.classList.add(this.showClass);
@@ -167,6 +168,9 @@ export let AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService),
             return;
         }
 
+        this.tooltipService.onTransitionEnd(this.tooltip, () => {
+            this.tooltip.style.display = 'none';
+        });
         this.tooltip.classList.remove(this.showClass);
 
         this.visible = false;

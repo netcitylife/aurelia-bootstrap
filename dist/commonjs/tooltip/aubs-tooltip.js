@@ -174,6 +174,7 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
             this.valuesChanged = false;
         }
 
+        this.tooltip.style.display = 'block';
         this.popper.update();
 
         this.tooltip.classList.add(this.showClass);
@@ -183,10 +184,15 @@ var AubsTooltipCustomAttribute = exports.AubsTooltipCustomAttribute = (_dec = (0
     };
 
     AubsTooltipCustomAttribute.prototype.handleHide = function handleHide() {
+        var _this2 = this;
+
         if (!this.visible) {
             return;
         }
 
+        this.tooltipService.onTransitionEnd(this.tooltip, function () {
+            _this2.tooltip.style.display = 'none';
+        });
         this.tooltip.classList.remove(this.showClass);
 
         this.visible = false;

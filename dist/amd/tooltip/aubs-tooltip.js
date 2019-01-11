@@ -173,6 +173,7 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
                 this.valuesChanged = false;
             }
 
+            this.tooltip.style.display = 'block';
             this.popper.update();
 
             this.tooltip.classList.add(this.showClass);
@@ -182,10 +183,15 @@ define(['exports', 'aurelia-framework', '../utils/tooltip-service', '../utils/bo
         };
 
         AubsTooltipCustomAttribute.prototype.handleHide = function handleHide() {
+            var _this2 = this;
+
             if (!this.visible) {
                 return;
             }
 
+            this.tooltipService.onTransitionEnd(this.tooltip, function () {
+                _this2.tooltip.style.display = 'none';
+            });
             this.tooltip.classList.remove(this.showClass);
 
             this.visible = false;

@@ -215,13 +215,14 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
                         this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
                     }
 
+                    this.popover.style.display = 'block';
                     this.popper.update();
 
-                    if (typeof this.onToggle === 'function') {
-                        this.tooltipService.onTransitionEnd(this.popover, function () {
-                            return _this2.onToggle({ open: true });
-                        });
-                    }
+                    this.tooltipService.onTransitionEnd(this.popover, function () {
+                        if (typeof _this2.onToggle === 'function') {
+                            _this2.onToggle({ open: true });
+                        }
+                    });
                     this.popover.classList.add(this.showClass);
 
                     this.visible = true;
@@ -235,11 +236,12 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
                         return;
                     }
 
-                    if (typeof this.onToggle === 'function') {
-                        this.tooltipService.onTransitionEnd(this.popover, function () {
-                            return _this3.onToggle({ open: false });
-                        });
-                    }
+                    this.tooltipService.onTransitionEnd(this.popover, function () {
+                        _this3.popover.style.display = 'none';
+                        if (typeof _this3.onToggle === 'function') {
+                            _this3.onToggle({ open: false });
+                        }
+                    });
                     this.popover.classList.remove(this.showClass);
 
                     this.visible = false;

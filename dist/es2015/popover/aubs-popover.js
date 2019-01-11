@@ -186,11 +186,14 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
             this.popper = this.tooltipService.createAttachment(this.element, this.popover, this.position, '.arrow');
         }
 
+        this.popover.style.display = 'block';
         this.popper.update();
 
-        if (typeof this.onToggle === 'function') {
-            this.tooltipService.onTransitionEnd(this.popover, () => this.onToggle({ open: true }));
-        }
+        this.tooltipService.onTransitionEnd(this.popover, () => {
+            if (typeof this.onToggle === 'function') {
+                this.onToggle({ open: true });
+            }
+        });
         this.popover.classList.add(this.showClass);
 
         this.visible = true;
@@ -202,9 +205,12 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
             return;
         }
 
-        if (typeof this.onToggle === 'function') {
-            this.tooltipService.onTransitionEnd(this.popover, () => this.onToggle({ open: false }));
-        }
+        this.tooltipService.onTransitionEnd(this.popover, () => {
+            this.popover.style.display = 'none';
+            if (typeof this.onToggle === 'function') {
+                this.onToggle({ open: false });
+            }
+        });
         this.popover.classList.remove(this.showClass);
 
         this.visible = false;
