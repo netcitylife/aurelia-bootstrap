@@ -171,6 +171,10 @@ export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = b
         }
 
         this.dropdown.classList.add(this.showClass);
+
+        if (bootstrapOptions.version === 4) {
+            this.dropdown.querySelector('.dropdown-menu').classList.add(this.showClass);
+        }
         this.focusNone();
         this.applyPlugins();
     }
@@ -303,6 +307,10 @@ export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = b
         setTimeout(() => {
             if (!this.dropdown.contains(evt.target)) {
                 this.dropdown.classList.remove(this.showClass);
+
+                if (bootstrapOptions.version === 4) {
+                    this.dropdown.querySelector('.dropdown-menu').classList.remove(this.showClass);
+                }
                 this.focusNone();
                 this.resetFilter();
             }
@@ -312,6 +320,10 @@ export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = b
     itemSelected(item) {
         this.value = item;
         this.dropdown.classList.remove(this.showClass);
+
+        if (bootstrapOptions.version === 4) {
+            this.dropdown.querySelector('.dropdown-menu').classList.remove(this.showClass);
+        }
 
         let newFilter = this.getName(this.value);
         if (newFilter !== this.filter) {
@@ -337,6 +349,10 @@ export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = b
         this.applyPlugins().then(() => {
             this.switchKeyCode(evt.keyCode);
             this.dropdown.classList.add(this.showClass);
+
+            if (bootstrapOptions.version === 4) {
+                this.dropdown.querySelector('.dropdown-menu').classList.add(this.showClass);
+            }
         });
     }
 
@@ -384,6 +400,10 @@ export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = b
 
     handleScape() {
         this.dropdown.classList.remove(this.showClass);
+
+        if (bootstrapOptions.version === 4) {
+            this.dropdown.querySelector('.dropdown-menu').classList.remove(this.showClass);
+        }
         this.focusNone();
         this.resetFilter();
     }

@@ -111,6 +111,10 @@ export class AubsTypeaheadCustomElement {
         }
 
         this.dropdown.classList.add(this.showClass);
+        // Bootstrap 4 also requires "show" on .dropdown-menu
+        if (bootstrapOptions.version === 4) {
+            this.dropdown.querySelector('.dropdown-menu').classList.add(this.showClass);
+        }
         this.focusNone();
         this.applyPlugins();
     }
@@ -247,6 +251,10 @@ export class AubsTypeaheadCustomElement {
         setTimeout(() => {
             if (!this.dropdown.contains(evt.target)) {
                 this.dropdown.classList.remove(this.showClass);
+                // Bootstrap 4 also requires "show" on .dropdown-menu
+                if (bootstrapOptions.version === 4) {
+                    this.dropdown.querySelector('.dropdown-menu').classList.remove(this.showClass);
+                }
                 this.focusNone();
                 this.resetFilter();
             }
@@ -256,6 +264,10 @@ export class AubsTypeaheadCustomElement {
     itemSelected(item) {
         this.value = item;
         this.dropdown.classList.remove(this.showClass);
+        // Bootstrap 4 also requires "show" on .dropdown-menu
+        if (bootstrapOptions.version === 4) {
+            this.dropdown.querySelector('.dropdown-menu').classList.remove(this.showClass);
+        }
 
         let newFilter = this.getName(this.value);
         if (newFilter !== this.filter) {
@@ -282,6 +294,10 @@ export class AubsTypeaheadCustomElement {
             .then(() => {
                 this.switchKeyCode(evt.keyCode);
                 this.dropdown.classList.add(this.showClass);
+                // Bootstrap 4 also requires "show" on .dropdown-menu
+                if (bootstrapOptions.version === 4) {
+                    this.dropdown.querySelector('.dropdown-menu').classList.add(this.showClass);
+                }
             });
     }
 
@@ -329,6 +345,10 @@ export class AubsTypeaheadCustomElement {
 
     handleScape() {
         this.dropdown.classList.remove(this.showClass);
+        // Bootstrap 4 also requires "show" on .dropdown-menu
+        if (bootstrapOptions.version === 4) {
+            this.dropdown.querySelector('.dropdown-menu').classList.remove(this.showClass);
+        }
         this.focusNone();
         this.resetFilter();
     }
