@@ -1,6 +1,7 @@
-import {inject, bindable, bindingMode} from "aurelia-framework";
+import {inject, bindable, bindingMode, customAttribute } from "aurelia-framework";
 
 @inject(Element)
+@customAttribute('aubs-btn-radio')
 export class AubsBtnRadioCustomAttribute {
 
     @bindable({defaultBindingMode: bindingMode.twoWay}) model;

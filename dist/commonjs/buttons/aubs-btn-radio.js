@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.AubsBtnRadioCustomAttribute = undefined;
 
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
 var _aureliaFramework = require('aurelia-framework');
 
@@ -54,7 +54,7 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var AubsBtnRadioCustomAttribute = exports.AubsBtnRadioCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec2 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+var AubsBtnRadioCustomAttribute = exports.AubsBtnRadioCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec2 = (0, _aureliaFramework.customAttribute)('aubs-btn-radio'), _dec3 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
     function AubsBtnRadioCustomAttribute(element) {
         var _this = this;
 
@@ -111,10 +111,10 @@ var AubsBtnRadioCustomAttribute = exports.AubsBtnRadioCustomAttribute = (_dec = 
     };
 
     return AubsBtnRadioCustomAttribute;
-}(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'model', [_dec2], {
+}(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'model', [_dec3], {
     enumerable: true,
     initializer: null
 }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'value', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-})), _class2)) || _class);
+})), _class2)) || _class) || _class);

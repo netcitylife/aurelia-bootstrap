@@ -1,8 +1,9 @@
-import {bindable, bindingMode, inject} from "aurelia-framework";
+import {bindable, bindingMode, inject, customAttribute} from "aurelia-framework";
 import {TooltipService} from "../utils/tooltip-service";
 import {bootstrapOptions} from "../utils/bootstrap-options";
 
 @inject(Element, TooltipService)
+@customAttribute('aubs-popover')
 export class AubsPopoverCustomAttribute {
 
     @bindable title;

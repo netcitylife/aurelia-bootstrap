@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,11 +43,11 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { bindable, bindingMode, inject } from "aurelia-framework";
+import { bindable, bindingMode, inject, customAttribute } from "aurelia-framework";
 import { TooltipService } from "../utils/tooltip-service";
 import { bootstrapOptions } from "../utils/bootstrap-options";
 
-export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = class AubsPopoverCustomAttribute {
+export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = customAttribute('aubs-popover'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = class AubsPopoverCustomAttribute {
 
     constructor(element, tooltipService) {
         _initDefineProp(this, "title", _descriptor, this);
@@ -296,7 +296,7 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
     initializer: function () {
         return false;
     }
-}), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec2], {
+}), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec3], {
     enumerable: true,
     initializer: function () {
         return false;
@@ -312,4 +312,4 @@ export let AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService),
 }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "onToggle", [bindable], {
     enumerable: true,
     initializer: null
-})), _class2)) || _class);
+})), _class2)) || _class) || _class);

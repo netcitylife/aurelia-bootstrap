@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/bootstrap-options"], function (_export, _context) {
     "use strict";
 
-    var bindable, bindingMode, inject, TooltipService, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, AubsPopoverCustomAttribute;
+    var bindable, bindingMode, inject, customAttribute, TooltipService, bootstrapOptions, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, AubsPopoverCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -59,13 +59,14 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
             bindable = _aureliaFramework.bindable;
             bindingMode = _aureliaFramework.bindingMode;
             inject = _aureliaFramework.inject;
+            customAttribute = _aureliaFramework.customAttribute;
         }, function (_utilsTooltipService) {
             TooltipService = _utilsTooltipService.TooltipService;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export("AubsPopoverCustomAttribute", AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+            _export("AubsPopoverCustomAttribute", AubsPopoverCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = customAttribute('aubs-popover'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
                 function AubsPopoverCustomAttribute(element, tooltipService) {
                     var _this = this;
 
@@ -329,7 +330,7 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
                 initializer: function initializer() {
                     return false;
                 }
-            }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec2], {
+            }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec3], {
                 enumerable: true,
                 initializer: function initializer() {
                     return false;
@@ -345,7 +346,7 @@ System.register(["aurelia-framework", "../utils/tooltip-service", "../utils/boot
             }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "onToggle", [bindable], {
                 enumerable: true,
                 initializer: null
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class));
 
             _export("AubsPopoverCustomAttribute", AubsPopoverCustomAttribute);
         }
