@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_export, _context) {
     "use strict";
 
-    var children, bindable, BindingEngine, inject, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, AubsAccordionCustomElement;
+    var children, bindable, BindingEngine, inject, customElement, useView, bootstrapOptions, _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, AubsAccordionCustomElement;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -60,11 +60,13 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
             bindable = _aureliaFramework.bindable;
             BindingEngine = _aureliaFramework.BindingEngine;
             inject = _aureliaFramework.inject;
+            customElement = _aureliaFramework.customElement;
+            useView = _aureliaFramework.useView;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export("AubsAccordionCustomElement", AubsAccordionCustomElement = (_dec = inject(BindingEngine), _dec2 = children('aubs-accordion-group'), _dec(_class = (_class2 = function () {
+            _export("AubsAccordionCustomElement", AubsAccordionCustomElement = (_dec = inject(BindingEngine), _dec2 = customElement('aubs-accordion'), _dec3 = useView('aurelia-bootstrap/accordion/aubs-accordion.html'), _dec4 = children('aubs-accordion-group'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
                 function AubsAccordionCustomElement(bindingEngine) {
                     _classCallCheck(this, AubsAccordionCustomElement);
 
@@ -136,12 +138,12 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
                 initializer: function initializer() {
                     return bootstrapOptions.accordionCloseOthers;
                 }
-            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "groups", [_dec2], {
+            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "groups", [_dec4], {
                 enumerable: true,
                 initializer: function initializer() {
                     return [];
                 }
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class) || _class));
 
             _export("AubsAccordionCustomElement", AubsAccordionCustomElement);
         }

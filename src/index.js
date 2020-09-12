@@ -17,21 +17,21 @@ import {TypeaheadHighlightValueConverter} from "./typeahead/typeahead-highlight"
 import {BootstrapConfig} from "./utils/bootstrap-config";
 
 export function configure(aurelia, callback) {
-    aurelia.globalResources(PLATFORM.moduleName('./accordion/aubs-accordion'));
-    aurelia.globalResources(PLATFORM.moduleName('./accordion/aubs-accordion-group'));
-    aurelia.globalResources(PLATFORM.moduleName('./buttons/aubs-btn-checkbox'));
-    aurelia.globalResources(PLATFORM.moduleName('./buttons/aubs-btn-loading'));
-    aurelia.globalResources(PLATFORM.moduleName('./buttons/aubs-btn-radio'));
-    aurelia.globalResources(PLATFORM.moduleName('./collapse/aubs-collapse'));
-    aurelia.globalResources(PLATFORM.moduleName('./dropdown/aubs-dropdown'));
-    aurelia.globalResources(PLATFORM.moduleName('./dropdown/aubs-dropdown-toggle'));
-    aurelia.globalResources(PLATFORM.moduleName('./pagination/aubs-pagination'));
-    aurelia.globalResources(PLATFORM.moduleName('./popover/aubs-popover'));
-    aurelia.globalResources(PLATFORM.moduleName('./tabs/aubs-tab'));
-    aurelia.globalResources(PLATFORM.moduleName('./tabs/aubs-tabset'));
-    aurelia.globalResources(PLATFORM.moduleName('./tooltip/aubs-tooltip'));
-    aurelia.globalResources(PLATFORM.moduleName('./typeahead/aubs-typeahead'));
-    aurelia.globalResources(PLATFORM.moduleName('./typeahead/typeahead-highlight'));
+    // aurelia.globalResources(PLATFORM.moduleName('./accordion/aubs-accordion'));
+    // aurelia.globalResources(PLATFORM.moduleName('./accordion/aubs-accordion-group'));
+    // aurelia.globalResources(PLATFORM.moduleName('./buttons/aubs-btn-checkbox'));
+    // aurelia.globalResources(PLATFORM.moduleName('./buttons/aubs-btn-loading'));
+    // aurelia.globalResources(PLATFORM.moduleName('./buttons/aubs-btn-radio'));
+    // aurelia.globalResources(PLATFORM.moduleName('./collapse/aubs-collapse'));
+    // aurelia.globalResources(PLATFORM.moduleName('./dropdown/aubs-dropdown'));
+    // aurelia.globalResources(PLATFORM.moduleName('./dropdown/aubs-dropdown-toggle'));
+    // aurelia.globalResources(PLATFORM.moduleName('./pagination/aubs-pagination'));
+    // aurelia.globalResources(PLATFORM.moduleName('./popover/aubs-popover'));
+    // aurelia.globalResources(PLATFORM.moduleName('./tabs/aubs-tab'));
+    // aurelia.globalResources(PLATFORM.moduleName('./tabs/aubs-tabset'));
+    // aurelia.globalResources(PLATFORM.moduleName('./tooltip/aubs-tooltip'));
+    // aurelia.globalResources(PLATFORM.moduleName('./typeahead/aubs-typeahead'));
+    // aurelia.globalResources(PLATFORM.moduleName('./typeahead/typeahead-highlight'));
 
     let config = new BootstrapConfig();
 

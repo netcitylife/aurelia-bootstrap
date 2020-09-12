@@ -1,7 +1,9 @@
-import {children, bindable, BindingEngine, inject} from "aurelia-framework";
+import {children, bindable, BindingEngine, inject, customElement, useView} from "aurelia-framework";
 import {bootstrapOptions} from "../utils/bootstrap-options";
 
 @inject(BindingEngine)
+@customElement('aubs-accordion')
+@useView('aurelia-bootstrap/accordion/aubs-accordion.html')
 export class AubsAccordionCustomElement {
 
     @bindable closeOthers = bootstrapOptions.accordionCloseOthers;

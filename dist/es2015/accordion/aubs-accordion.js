@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,10 +43,10 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { children, bindable, BindingEngine, inject } from "aurelia-framework";
+import { children, bindable, BindingEngine, inject, customElement, useView } from "aurelia-framework";
 import { bootstrapOptions } from "../utils/bootstrap-options";
 
-export let AubsAccordionCustomElement = (_dec = inject(BindingEngine), _dec2 = children('aubs-accordion-group'), _dec(_class = (_class2 = class AubsAccordionCustomElement {
+export let AubsAccordionCustomElement = (_dec = inject(BindingEngine), _dec2 = customElement('aubs-accordion'), _dec3 = useView('aurelia-bootstrap/accordion/aubs-accordion.html'), _dec4 = children('aubs-accordion-group'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class AubsAccordionCustomElement {
 
     constructor(bindingEngine) {
         _initDefineProp(this, "closeOthers", _descriptor, this);
@@ -89,9 +89,9 @@ export let AubsAccordionCustomElement = (_dec = inject(BindingEngine), _dec2 = c
     initializer: function () {
         return bootstrapOptions.accordionCloseOthers;
     }
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "groups", [_dec2], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "groups", [_dec4], {
     enumerable: true,
     initializer: function () {
         return [];
     }
-})), _class2)) || _class);
+})), _class2)) || _class) || _class) || _class);

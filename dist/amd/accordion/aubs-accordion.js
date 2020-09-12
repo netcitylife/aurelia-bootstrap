@@ -55,9 +55,9 @@ define(["exports", "aurelia-framework", "../utils/bootstrap-options"], function 
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2;
+    var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2;
 
-    var AubsAccordionCustomElement = exports.AubsAccordionCustomElement = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.BindingEngine), _dec2 = (0, _aureliaFramework.children)('aubs-accordion-group'), _dec(_class = (_class2 = function () {
+    var AubsAccordionCustomElement = exports.AubsAccordionCustomElement = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.BindingEngine), _dec2 = (0, _aureliaFramework.customElement)('aubs-accordion'), _dec3 = (0, _aureliaFramework.useView)('aurelia-bootstrap/accordion/aubs-accordion.html'), _dec4 = (0, _aureliaFramework.children)('aubs-accordion-group'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
         function AubsAccordionCustomElement(bindingEngine) {
             _classCallCheck(this, AubsAccordionCustomElement);
 
@@ -129,10 +129,10 @@ define(["exports", "aurelia-framework", "../utils/bootstrap-options"], function 
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.accordionCloseOthers;
         }
-    }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "groups", [_dec2], {
+    }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "groups", [_dec4], {
         enumerable: true,
         initializer: function initializer() {
             return [];
         }
-    })), _class2)) || _class);
+    })), _class2)) || _class) || _class) || _class);
 });

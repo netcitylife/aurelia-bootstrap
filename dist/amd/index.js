@@ -7,21 +7,6 @@ define(["exports", "aurelia-pal", "./accordion/aubs-accordion", "./accordion/aub
     exports.BootstrapConfig = exports.TypeaheadHighlightValueConverter = exports.AubsTypeaheadCustomElement = exports.AubsTooltipCustomAttribute = exports.AubsTabsetCustomElement = exports.AubsTabCustomElement = exports.AubsPopoverCustomAttribute = exports.AubsPaginationCustomElement = exports.AubsDropdownToggleCustomAttribute = exports.AubsDropdownCustomAttribute = exports.AubsCollapseCustomAttribute = exports.AubsBtnRadioCustomAttribute = exports.AubsBtnLoadingCustomAttribute = exports.AubsBtnCheckboxCustomAttribute = exports.AubsAccordionGroupCustomElement = exports.AubsAccordionCustomElement = undefined;
     exports.configure = configure;
     function configure(aurelia, callback) {
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./accordion/aubs-accordion'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./accordion/aubs-accordion-group'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./buttons/aubs-btn-checkbox'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./buttons/aubs-btn-loading'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./buttons/aubs-btn-radio'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./collapse/aubs-collapse'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./dropdown/aubs-dropdown'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./dropdown/aubs-dropdown-toggle'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./pagination/aubs-pagination'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./popover/aubs-popover'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./tabs/aubs-tab'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./tabs/aubs-tabset'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./tooltip/aubs-tooltip'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./typeahead/aubs-typeahead'));
-        aurelia.globalResources(_aureliaPal.PLATFORM.moduleName('./typeahead/typeahead-highlight'));
 
         var config = new _bootstrapConfig.BootstrapConfig();
 
