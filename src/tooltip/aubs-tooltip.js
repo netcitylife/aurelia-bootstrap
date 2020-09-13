@@ -1,8 +1,9 @@
-import {bindable, inject, bindingMode} from 'aurelia-framework';
+import {bindable, inject, bindingMode, customAttribute} from 'aurelia-framework';
 import {TooltipService} from '../utils/tooltip-service';
 import {bootstrapOptions} from '../utils/bootstrap-options';
 
 @inject(Element, TooltipService)
+@customAttribute('aubs-tooltip')
 export class AubsTooltipCustomAttribute {
     @bindable text;
     @bindable position = bootstrapOptions.tooltipPosition;

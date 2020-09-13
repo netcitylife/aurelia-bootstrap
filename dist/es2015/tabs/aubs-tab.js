@@ -1,4 +1,4 @@
-var _dec, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,11 +43,11 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { bindable, inject } from "aurelia-framework";
+import { bindable, inject, customElement, useView } from "aurelia-framework";
 import { AubsTabsetCustomElement } from "./aubs-tabset";
 import velocity from 'velocity-animate';
 
-export let AubsTabCustomElement = (_dec = inject(AubsTabsetCustomElement, Element), _dec(_class = (_class2 = class AubsTabCustomElement {
+export let AubsTabCustomElement = (_dec = inject(AubsTabsetCustomElement, Element), _dec2 = customElement('aubs-tab'), _dec3 = useView('./aubs-tab.html'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class AubsTabCustomElement {
 
     constructor(tabset, element) {
         _initDefineProp(this, "header", _descriptor, this);
@@ -114,4 +114,4 @@ export let AubsTabCustomElement = (_dec = inject(AubsTabsetCustomElement, Elemen
 }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "onDeselect", [bindable], {
     enumerable: true,
     initializer: null
-})), _class2)) || _class);
+})), _class2)) || _class) || _class) || _class);

@@ -1,6 +1,7 @@
-import {inject, bindable, bindingMode} from "aurelia-framework";
+import {inject, bindable, bindingMode, customAttribute} from "aurelia-framework";
 
 @inject(Element)
+@customAttribute('aubs-btn-checkbox')
 export class AubsBtnCheckboxCustomAttribute {
 
     @bindable({defaultBindingMode: bindingMode.twoWay}) state;

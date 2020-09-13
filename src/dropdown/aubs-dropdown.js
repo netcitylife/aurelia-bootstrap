@@ -1,7 +1,8 @@
-import {inject, bindable, bindingMode} from "aurelia-framework";
+import {inject, bindable, bindingMode, customAttribute} from "aurelia-framework";
 import {bootstrapOptions} from "../utils/bootstrap-options";
 
 @inject(Element)
+@customAttribute('aubs-dropdown')
 export class AubsDropdownCustomAttribute {
 
     @bindable({defaultBindingMode: bindingMode.twoWay}) isOpen;

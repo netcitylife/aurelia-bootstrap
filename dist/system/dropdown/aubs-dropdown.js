@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_export, _context) {
     "use strict";
 
-    var inject, bindable, bindingMode, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsDropdownCustomAttribute;
+    var inject, bindable, bindingMode, customAttribute, bootstrapOptions, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsDropdownCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -59,11 +59,12 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
             inject = _aureliaFramework.inject;
             bindable = _aureliaFramework.bindable;
             bindingMode = _aureliaFramework.bindingMode;
+            customAttribute = _aureliaFramework.customAttribute;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export("AubsDropdownCustomAttribute", AubsDropdownCustomAttribute = (_dec = inject(Element), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+            _export("AubsDropdownCustomAttribute", AubsDropdownCustomAttribute = (_dec = inject(Element), _dec2 = customAttribute('aubs-dropdown'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
                 function AubsDropdownCustomAttribute(element) {
                     var _this = this;
 
@@ -175,7 +176,7 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
                 };
 
                 return AubsDropdownCustomAttribute;
-            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec2], {
+            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec3], {
                 enumerable: true,
                 initializer: null
             }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "autoClose", [bindable], {
@@ -186,7 +187,7 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
             }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "onToggle", [bindable], {
                 enumerable: true,
                 initializer: null
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class));
 
             _export("AubsDropdownCustomAttribute", AubsDropdownCustomAttribute);
         }

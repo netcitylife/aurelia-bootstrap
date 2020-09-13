@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_export, _context) {
     "use strict";
 
-    var inject, bindable, bindingMode, observable, BindingEngine, containerless, bootstrapOptions, _typeof, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, AubsTypeaheadCustomElement;
+    var inject, bindable, bindingMode, observable, BindingEngine, containerless, customElement, useView, bootstrapOptions, _typeof, _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19, AubsTypeaheadCustomElement;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -62,6 +62,8 @@ System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_
             observable = _aureliaFramework.observable;
             BindingEngine = _aureliaFramework.BindingEngine;
             containerless = _aureliaFramework.containerless;
+            customElement = _aureliaFramework.customElement;
+            useView = _aureliaFramework.useView;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
@@ -72,7 +74,7 @@ System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_
                 return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
             };
 
-            _export('AubsTypeaheadCustomElement', AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = containerless(_class = (_class2 = function () {
+            _export('AubsTypeaheadCustomElement', AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = customElement('aubs-typeahead'), _dec3 = useView('./aubs-typeahead.html'), _dec4 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = containerless(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
                 function AubsTypeaheadCustomElement(bindingEngine) {
                     var _this = this;
 
@@ -463,7 +465,7 @@ System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_
             }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'data', [bindable], {
                 enumerable: true,
                 initializer: null
-            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'value', [_dec2], {
+            }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'value', [_dec4], {
                 enumerable: true,
                 initializer: null
             }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'key', [bindable], {
@@ -549,7 +551,7 @@ System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_
                 initializer: function initializer() {
                     return '';
                 }
-            })), _class2)) || _class) || _class));
+            })), _class2)) || _class) || _class) || _class) || _class));
 
             _export('AubsTypeaheadCustomElement', AubsTypeaheadCustomElement);
         }

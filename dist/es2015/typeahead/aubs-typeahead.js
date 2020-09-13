@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19;
+var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,10 +43,10 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inject, bindable, bindingMode, observable, BindingEngine, containerless } from 'aurelia-framework';
+import { inject, bindable, bindingMode, observable, BindingEngine, containerless, customElement, useView } from 'aurelia-framework';
 import { bootstrapOptions } from "../utils/bootstrap-options";
 
-export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = containerless(_class = (_class2 = class AubsTypeaheadCustomElement {
+export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = customElement('aubs-typeahead'), _dec3 = useView('./aubs-typeahead.html'), _dec4 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = containerless(_class = _dec2(_class = _dec3(_class = (_class2 = class AubsTypeaheadCustomElement {
 
     constructor(bindingEngine) {
         _initDefineProp(this, 'data', _descriptor, this);
@@ -410,7 +410,7 @@ export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = b
 }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'data', [bindable], {
     enumerable: true,
     initializer: null
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'value', [_dec2], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'value', [_dec4], {
     enumerable: true,
     initializer: null
 }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'key', [bindable], {
@@ -496,4 +496,4 @@ export let AubsTypeaheadCustomElement = (_dec = inject(BindingEngine), _dec2 = b
     initializer: function () {
         return '';
     }
-})), _class2)) || _class) || _class);
+})), _class2)) || _class) || _class) || _class) || _class);

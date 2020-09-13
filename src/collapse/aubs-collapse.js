@@ -1,8 +1,9 @@
-import {inject, bindable} from "aurelia-framework";
+import {inject, bindable, customAttribute} from "aurelia-framework";
 import velocity from "velocity-animate";
 import {bootstrapOptions} from "../utils/bootstrap-options";
 
 @inject(Element)
+@customAttribute('aubs-collapse')
 export class AubsCollapseCustomAttribute {
 
     @bindable collapsed = false;

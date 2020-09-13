@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,12 +43,12 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inject, bindable, bindingMode, containerless } from "aurelia-framework";
+import { inject, bindable, bindingMode, containerless, customElement, useView } from "aurelia-framework";
 import { bootstrapOptions } from "../utils/bootstrap-options";
 import velocity from 'velocity-animate';
 import { AubsAccordionCustomElement } from './aubs-accordion';
 
-export let AubsAccordionGroupCustomElement = (_dec = inject(AubsAccordionCustomElement), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), containerless(_class = _dec(_class = (_class2 = class AubsAccordionGroupCustomElement {
+export let AubsAccordionGroupCustomElement = (_dec = inject(AubsAccordionCustomElement), _dec2 = customElement('aubs-accordion-group'), _dec3 = useView('./aubs-accordion-group.html'), _dec4 = bindable({ defaultBindingMode: bindingMode.twoWay }), containerless(_class = _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class AubsAccordionGroupCustomElement {
 
     constructor(accordion) {
         _initDefineProp(this, "title", _descriptor, this);
@@ -111,7 +111,7 @@ export let AubsAccordionGroupCustomElement = (_dec = inject(AubsAccordionCustomE
     initializer: function () {
         return bootstrapOptions.accordionGroupPanelClass;
     }
-}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec2], {
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec4], {
     enumerable: true,
     initializer: function () {
         return false;
@@ -121,4 +121,4 @@ export let AubsAccordionGroupCustomElement = (_dec = inject(AubsAccordionCustomE
     initializer: function () {
         return false;
     }
-})), _class2)) || _class) || _class);
+})), _class2)) || _class) || _class) || _class) || _class);

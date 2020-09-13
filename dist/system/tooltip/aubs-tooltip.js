@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/bootstrap-options'], function (_export, _context) {
     "use strict";
 
-    var bindable, inject, bindingMode, TooltipService, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, AubsTooltipCustomAttribute;
+    var bindable, inject, bindingMode, customAttribute, TooltipService, bootstrapOptions, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, AubsTooltipCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -59,13 +59,14 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
             bindable = _aureliaFramework.bindable;
             inject = _aureliaFramework.inject;
             bindingMode = _aureliaFramework.bindingMode;
+            customAttribute = _aureliaFramework.customAttribute;
         }, function (_utilsTooltipService) {
             TooltipService = _utilsTooltipService.TooltipService;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export('AubsTooltipCustomAttribute', AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+            _export('AubsTooltipCustomAttribute', AubsTooltipCustomAttribute = (_dec = inject(Element, TooltipService), _dec2 = customAttribute('aubs-tooltip'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
                 function AubsTooltipCustomAttribute(element, tooltipService) {
                     var _this = this;
 
@@ -256,7 +257,7 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
                 initializer: function initializer() {
                     return false;
                 }
-            }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, 'open', [_dec2], {
+            }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, 'open', [_dec3], {
                 enumerable: true,
                 initializer: function initializer() {
                     return false;
@@ -266,7 +267,7 @@ System.register(['aurelia-framework', '../utils/tooltip-service', '../utils/boot
                 initializer: function initializer() {
                     return bootstrapOptions.tooltipTrigger;
                 }
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class));
 
             _export('AubsTooltipCustomAttribute', AubsTooltipCustomAttribute);
         }

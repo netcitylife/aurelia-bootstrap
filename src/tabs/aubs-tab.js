@@ -1,8 +1,10 @@
-import {bindable, inject} from "aurelia-framework";
+import {bindable, inject, customElement, useView} from "aurelia-framework";
 import {AubsTabsetCustomElement} from "./aubs-tabset";
 import velocity from 'velocity-animate';
 
 @inject(AubsTabsetCustomElement, Element)
+@customElement('aubs-tab')
+@useView('./aubs-tab.html')
 export class AubsTabCustomElement {
     @bindable header;
     @bindable disabled = false;

@@ -7,7 +7,7 @@ exports.AubsTypeaheadCustomElement = undefined;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19;
+var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11, _descriptor12, _descriptor13, _descriptor14, _descriptor15, _descriptor16, _descriptor17, _descriptor18, _descriptor19;
 
 var _aureliaFramework = require('aurelia-framework');
 
@@ -58,7 +58,7 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var AubsTypeaheadCustomElement = exports.AubsTypeaheadCustomElement = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.BindingEngine), _dec2 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = (0, _aureliaFramework.containerless)(_class = (_class2 = function () {
+var AubsTypeaheadCustomElement = exports.AubsTypeaheadCustomElement = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.BindingEngine), _dec2 = (0, _aureliaFramework.customElement)('aubs-typeahead'), _dec3 = (0, _aureliaFramework.useView)('./aubs-typeahead.html'), _dec4 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = (0, _aureliaFramework.containerless)(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
     function AubsTypeaheadCustomElement(bindingEngine) {
         var _this = this;
 
@@ -449,7 +449,7 @@ var AubsTypeaheadCustomElement = exports.AubsTypeaheadCustomElement = (_dec = (0
 }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'data', [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'value', [_dec2], {
+}), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'value', [_dec4], {
     enumerable: true,
     initializer: null
 }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'key', [_aureliaFramework.bindable], {
@@ -535,4 +535,4 @@ var AubsTypeaheadCustomElement = exports.AubsTypeaheadCustomElement = (_dec = (0
     initializer: function initializer() {
         return '';
     }
-})), _class2)) || _class) || _class);
+})), _class2)) || _class) || _class) || _class) || _class);

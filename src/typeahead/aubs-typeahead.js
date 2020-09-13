@@ -1,8 +1,10 @@
-import {inject, bindable, bindingMode, observable, BindingEngine, containerless} from 'aurelia-framework';
+import {inject, bindable, bindingMode, observable, BindingEngine, containerless, customElement, useView} from 'aurelia-framework';
 import {bootstrapOptions} from "../utils/bootstrap-options";
 
 @inject(BindingEngine)
 @containerless
+@customElement('aubs-typeahead')
+@useView('./aubs-typeahead.html')
 export class AubsTypeaheadCustomElement {
     @bindable data;
     @bindable({defaultBindingMode: bindingMode.twoWay}) value;

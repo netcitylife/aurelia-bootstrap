@@ -63,9 +63,9 @@ define(["exports", "aurelia-framework", "velocity-animate", "../utils/bootstrap-
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _class, _desc, _value, _class2, _descriptor;
+    var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
 
-    var AubsCollapseCustomAttribute = exports.AubsCollapseCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec(_class = (_class2 = function () {
+    var AubsCollapseCustomAttribute = exports.AubsCollapseCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec2 = (0, _aureliaFramework.customAttribute)('aubs-collapse'), _dec(_class = _dec2(_class = (_class2 = function () {
         function AubsCollapseCustomAttribute(element) {
             _classCallCheck(this, AubsCollapseCustomAttribute);
 
@@ -106,5 +106,5 @@ define(["exports", "aurelia-framework", "velocity-animate", "../utils/bootstrap-
         initializer: function initializer() {
             return false;
         }
-    })), _class2)) || _class);
+    })), _class2)) || _class) || _class);
 });

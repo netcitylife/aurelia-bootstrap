@@ -1,4 +1,4 @@
-var _dec, _class, _desc, _value, _class2, _descriptor;
+var _dec, _dec2, _class, _desc, _value, _class2, _descriptor;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,11 +43,11 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { inject, bindable } from "aurelia-framework";
+import { inject, bindable, customAttribute } from "aurelia-framework";
 import velocity from "velocity-animate";
 import { bootstrapOptions } from "../utils/bootstrap-options";
 
-export let AubsCollapseCustomAttribute = (_dec = inject(Element), _dec(_class = (_class2 = class AubsCollapseCustomAttribute {
+export let AubsCollapseCustomAttribute = (_dec = inject(Element), _dec2 = customAttribute('aubs-collapse'), _dec(_class = _dec2(_class = (_class2 = class AubsCollapseCustomAttribute {
 
     constructor(element) {
         _initDefineProp(this, "collapsed", _descriptor, this);
@@ -85,4 +85,4 @@ export let AubsCollapseCustomAttribute = (_dec = inject(Element), _dec(_class = 
     initializer: function () {
         return false;
     }
-})), _class2)) || _class);
+})), _class2)) || _class) || _class);

@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_export, _context) {
     "use strict";
 
-    var children, bindable, bindingMode, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsTabsetCustomElement;
+    var children, bindable, bindingMode, customElement, useView, bootstrapOptions, _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsTabsetCustomElement;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -59,11 +59,13 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
             children = _aureliaFramework.children;
             bindable = _aureliaFramework.bindable;
             bindingMode = _aureliaFramework.bindingMode;
+            customElement = _aureliaFramework.customElement;
+            useView = _aureliaFramework.useView;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export("AubsTabsetCustomElement", AubsTabsetCustomElement = (_dec = children({ name: "tabs", selector: "aubs-tab" }), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+            _export("AubsTabsetCustomElement", AubsTabsetCustomElement = (_dec = children({ name: "tabs", selector: "aubs-tab" }), _dec2 = customElement('aubs-tabset'), _dec3 = useView('./aubs-tabset.html'), _dec4 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
                 function AubsTabsetCustomElement() {
                     _classCallCheck(this, AubsTabsetCustomElement);
 
@@ -149,12 +151,12 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
                 initializer: function initializer() {
                     return bootstrapOptions.tabsetVertical;
                 }
-            }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "active", [_dec2], {
+            }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "active", [_dec4], {
                 enumerable: true,
                 initializer: function initializer() {
                     return 0;
                 }
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class) || _class));
 
             _export("AubsTabsetCustomElement", AubsTabsetCustomElement);
         }

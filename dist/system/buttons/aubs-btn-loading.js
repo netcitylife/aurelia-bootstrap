@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_export, _context) {
     "use strict";
 
-    var inject, bindable, bindingMode, bootstrapOptions, _dec, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsBtnLoadingCustomAttribute;
+    var inject, bindable, bindingMode, customAttribute, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsBtnLoadingCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -59,11 +59,12 @@ System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_
             inject = _aureliaFramework.inject;
             bindable = _aureliaFramework.bindable;
             bindingMode = _aureliaFramework.bindingMode;
+            customAttribute = _aureliaFramework.customAttribute;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export('AubsBtnLoadingCustomAttribute', AubsBtnLoadingCustomAttribute = (_dec = inject(Element), _dec(_class = (_class2 = function () {
+            _export('AubsBtnLoadingCustomAttribute', AubsBtnLoadingCustomAttribute = (_dec = inject(Element), _dec2 = customAttribute('aubs-btn-loading'), _dec(_class = _dec2(_class = (_class2 = function () {
                 function AubsBtnLoadingCustomAttribute(element) {
                     _classCallCheck(this, AubsBtnLoadingCustomAttribute);
 
@@ -141,7 +142,7 @@ System.register(['aurelia-framework', '../utils/bootstrap-options'], function (_
                 initializer: function initializer() {
                     return false;
                 }
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class));
 
             _export('AubsBtnLoadingCustomAttribute', AubsBtnLoadingCustomAttribute);
         }

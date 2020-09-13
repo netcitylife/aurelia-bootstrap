@@ -55,9 +55,9 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+    var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
-    var AubsBtnCheckboxCustomAttribute = exports.AubsBtnCheckboxCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec2 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+    var AubsBtnCheckboxCustomAttribute = exports.AubsBtnCheckboxCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec2 = (0, _aureliaFramework.customAttribute)('aubs-btn-checkbox'), _dec3 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
         function AubsBtnCheckboxCustomAttribute(element) {
             var _this = this;
 
@@ -121,7 +121,7 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
         };
 
         return AubsBtnCheckboxCustomAttribute;
-    }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'state', [_dec2], {
+    }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'state', [_dec3], {
         enumerable: true,
         initializer: null
     }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'checkedValue', [_aureliaFramework.bindable], {
@@ -130,5 +130,5 @@ define(['exports', 'aurelia-framework'], function (exports, _aureliaFramework) {
     }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'uncheckedValue', [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: null
-    })), _class2)) || _class);
+    })), _class2)) || _class) || _class);
 });

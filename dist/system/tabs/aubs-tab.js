@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "./aubs-tabset", "velocity-animate"], function (_export, _context) {
     "use strict";
 
-    var bindable, inject, AubsTabsetCustomElement, velocity, _dec, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, AubsTabCustomElement;
+    var bindable, inject, customElement, useView, AubsTabsetCustomElement, velocity, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, AubsTabCustomElement;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -58,13 +58,15 @@ System.register(["aurelia-framework", "./aubs-tabset", "velocity-animate"], func
         setters: [function (_aureliaFramework) {
             bindable = _aureliaFramework.bindable;
             inject = _aureliaFramework.inject;
+            customElement = _aureliaFramework.customElement;
+            useView = _aureliaFramework.useView;
         }, function (_aubsTabset) {
             AubsTabsetCustomElement = _aubsTabset.AubsTabsetCustomElement;
         }, function (_velocityAnimate) {
             velocity = _velocityAnimate.default;
         }],
         execute: function () {
-            _export("AubsTabCustomElement", AubsTabCustomElement = (_dec = inject(AubsTabsetCustomElement, Element), _dec(_class = (_class2 = function () {
+            _export("AubsTabCustomElement", AubsTabCustomElement = (_dec = inject(AubsTabsetCustomElement, Element), _dec2 = customElement('aubs-tab'), _dec3 = useView('./aubs-tab.html'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
                 function AubsTabCustomElement(tabset, element) {
                     _classCallCheck(this, AubsTabCustomElement);
 
@@ -134,7 +136,7 @@ System.register(["aurelia-framework", "./aubs-tabset", "velocity-animate"], func
             }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "onDeselect", [bindable], {
                 enumerable: true,
                 initializer: null
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class) || _class));
 
             _export("AubsTabCustomElement", AubsTabCustomElement);
         }

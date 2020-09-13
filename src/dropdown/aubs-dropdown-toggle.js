@@ -1,7 +1,8 @@
-import {inject} from "aurelia-framework";
+import {inject, customAttribute} from "aurelia-framework";
 import {AubsDropdownCustomAttribute} from "./aubs-dropdown";
 
 @inject(AubsDropdownCustomAttribute, Element)
+@customAttribute('aubs-dropdown-toggle')
 export class AubsDropdownToggleCustomAttribute {
 
     constructor(dropdown, element){

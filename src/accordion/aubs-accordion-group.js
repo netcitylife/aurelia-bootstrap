@@ -1,10 +1,12 @@
-import {inject, bindable, bindingMode, containerless} from "aurelia-framework";
+import {inject, bindable, bindingMode, containerless, customElement, useView} from "aurelia-framework";
 import {bootstrapOptions} from "../utils/bootstrap-options";
 import velocity from 'velocity-animate';
 import {AubsAccordionCustomElement} from './aubs-accordion';
 
 @containerless
 @inject(AubsAccordionCustomElement)
+@customElement('aubs-accordion-group')
+@useView('./aubs-accordion-group.html')
 export class AubsAccordionGroupCustomElement {
 
     @bindable title;

@@ -1,4 +1,4 @@
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
 function _initDefineProp(target, property, descriptor, context) {
     if (!descriptor) return;
@@ -43,10 +43,10 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-import { children, bindable, bindingMode } from "aurelia-framework";
+import { children, bindable, bindingMode, customElement, useView } from "aurelia-framework";
 import { bootstrapOptions } from "../utils/bootstrap-options";
 
-export let AubsTabsetCustomElement = (_dec = children({ name: "tabs", selector: "aubs-tab" }), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = class AubsTabsetCustomElement {
+export let AubsTabsetCustomElement = (_dec = children({ name: "tabs", selector: "aubs-tab" }), _dec2 = customElement('aubs-tabset'), _dec3 = useView('./aubs-tabset.html'), _dec4 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = class AubsTabsetCustomElement {
     constructor() {
         _initDefineProp(this, "type", _descriptor, this);
 
@@ -113,9 +113,9 @@ export let AubsTabsetCustomElement = (_dec = children({ name: "tabs", selector: 
     initializer: function () {
         return bootstrapOptions.tabsetVertical;
     }
-}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "active", [_dec2], {
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "active", [_dec4], {
     enumerable: true,
     initializer: function () {
         return 0;
     }
-})), _class2)) || _class);
+})), _class2)) || _class) || _class) || _class);

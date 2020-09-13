@@ -3,7 +3,7 @@
 System.register(['aurelia-framework'], function (_export, _context) {
     "use strict";
 
-    var inject, bindable, bindingMode, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsBtnCheckboxCustomAttribute;
+    var inject, bindable, bindingMode, customAttribute, _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, AubsBtnCheckboxCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -59,9 +59,10 @@ System.register(['aurelia-framework'], function (_export, _context) {
             inject = _aureliaFramework.inject;
             bindable = _aureliaFramework.bindable;
             bindingMode = _aureliaFramework.bindingMode;
+            customAttribute = _aureliaFramework.customAttribute;
         }],
         execute: function () {
-            _export('AubsBtnCheckboxCustomAttribute', AubsBtnCheckboxCustomAttribute = (_dec = inject(Element), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+            _export('AubsBtnCheckboxCustomAttribute', AubsBtnCheckboxCustomAttribute = (_dec = inject(Element), _dec2 = customAttribute('aubs-btn-checkbox'), _dec3 = bindable({ defaultBindingMode: bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
                 function AubsBtnCheckboxCustomAttribute(element) {
                     var _this = this;
 
@@ -125,7 +126,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
                 };
 
                 return AubsBtnCheckboxCustomAttribute;
-            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'state', [_dec2], {
+            }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'state', [_dec3], {
                 enumerable: true,
                 initializer: null
             }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, 'checkedValue', [bindable], {
@@ -134,7 +135,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
             }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, 'uncheckedValue', [bindable], {
                 enumerable: true,
                 initializer: null
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class));
 
             _export('AubsBtnCheckboxCustomAttribute', AubsBtnCheckboxCustomAttribute);
         }

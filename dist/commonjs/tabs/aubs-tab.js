@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.AubsTabCustomElement = undefined;
 
-var _dec, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
+var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4;
 
 var _aureliaFramework = require("aurelia-framework");
 
@@ -62,7 +62,7 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var AubsTabCustomElement = exports.AubsTabCustomElement = (_dec = (0, _aureliaFramework.inject)(_aubsTabset.AubsTabsetCustomElement, Element), _dec(_class = (_class2 = function () {
+var AubsTabCustomElement = exports.AubsTabCustomElement = (_dec = (0, _aureliaFramework.inject)(_aubsTabset.AubsTabsetCustomElement, Element), _dec2 = (0, _aureliaFramework.customElement)('aubs-tab'), _dec3 = (0, _aureliaFramework.useView)('./aubs-tab.html'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
     function AubsTabCustomElement(tabset, element) {
         _classCallCheck(this, AubsTabCustomElement);
 
@@ -132,4 +132,4 @@ var AubsTabCustomElement = exports.AubsTabCustomElement = (_dec = (0, _aureliaFr
 }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "onDeselect", [_aureliaFramework.bindable], {
     enumerable: true,
     initializer: null
-})), _class2)) || _class);
+})), _class2)) || _class) || _class) || _class);

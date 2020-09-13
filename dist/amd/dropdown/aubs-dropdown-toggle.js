@@ -12,9 +12,9 @@ define(["exports", "aurelia-framework", "./aubs-dropdown"], function (exports, _
         }
     }
 
-    var _dec, _class;
+    var _dec, _dec2, _class;
 
-    var AubsDropdownToggleCustomAttribute = exports.AubsDropdownToggleCustomAttribute = (_dec = (0, _aureliaFramework.inject)(_aubsDropdown.AubsDropdownCustomAttribute, Element), _dec(_class = function () {
+    var AubsDropdownToggleCustomAttribute = exports.AubsDropdownToggleCustomAttribute = (_dec = (0, _aureliaFramework.inject)(_aubsDropdown.AubsDropdownCustomAttribute, Element), _dec2 = (0, _aureliaFramework.customAttribute)('aubs-dropdown-toggle'), _dec(_class = _dec2(_class = function () {
         function AubsDropdownToggleCustomAttribute(dropdown, element) {
             var _this = this;
 
@@ -37,5 +37,5 @@ define(["exports", "aurelia-framework", "./aubs-dropdown"], function (exports, _
         };
 
         return AubsDropdownToggleCustomAttribute;
-    }()) || _class);
+    }()) || _class) || _class);
 });

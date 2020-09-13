@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.AubsTabsetCustomElement = undefined;
 
-var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
 var _aureliaFramework = require("aurelia-framework");
 
@@ -56,7 +56,7 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var AubsTabsetCustomElement = exports.AubsTabsetCustomElement = (_dec = (0, _aureliaFramework.children)({ name: "tabs", selector: "aubs-tab" }), _dec2 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = (_class2 = function () {
+var AubsTabsetCustomElement = exports.AubsTabsetCustomElement = (_dec = (0, _aureliaFramework.children)({ name: "tabs", selector: "aubs-tab" }), _dec2 = (0, _aureliaFramework.customElement)('aubs-tabset'), _dec3 = (0, _aureliaFramework.useView)('./aubs-tabset.html'), _dec4 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
     function AubsTabsetCustomElement() {
         _classCallCheck(this, AubsTabsetCustomElement);
 
@@ -142,9 +142,9 @@ var AubsTabsetCustomElement = exports.AubsTabsetCustomElement = (_dec = (0, _aur
     initializer: function initializer() {
         return _bootstrapOptions.bootstrapOptions.tabsetVertical;
     }
-}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "active", [_dec2], {
+}), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "active", [_dec4], {
     enumerable: true,
     initializer: function initializer() {
         return 0;
     }
-})), _class2)) || _class);
+})), _class2)) || _class) || _class) || _class);

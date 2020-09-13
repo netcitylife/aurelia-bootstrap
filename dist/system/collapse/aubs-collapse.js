@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "velocity-animate", "../utils/bootstrap-options"], function (_export, _context) {
     "use strict";
 
-    var inject, bindable, velocity, bootstrapOptions, _dec, _class, _desc, _value, _class2, _descriptor, AubsCollapseCustomAttribute;
+    var inject, bindable, customAttribute, velocity, bootstrapOptions, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, AubsCollapseCustomAttribute;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -58,13 +58,14 @@ System.register(["aurelia-framework", "velocity-animate", "../utils/bootstrap-op
         setters: [function (_aureliaFramework) {
             inject = _aureliaFramework.inject;
             bindable = _aureliaFramework.bindable;
+            customAttribute = _aureliaFramework.customAttribute;
         }, function (_velocityAnimate) {
             velocity = _velocityAnimate.default;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export("AubsCollapseCustomAttribute", AubsCollapseCustomAttribute = (_dec = inject(Element), _dec(_class = (_class2 = function () {
+            _export("AubsCollapseCustomAttribute", AubsCollapseCustomAttribute = (_dec = inject(Element), _dec2 = customAttribute('aubs-collapse'), _dec(_class = _dec2(_class = (_class2 = function () {
                 function AubsCollapseCustomAttribute(element) {
                     _classCallCheck(this, AubsCollapseCustomAttribute);
 
@@ -105,7 +106,7 @@ System.register(["aurelia-framework", "velocity-animate", "../utils/bootstrap-op
                 initializer: function initializer() {
                     return false;
                 }
-            })), _class2)) || _class));
+            })), _class2)) || _class) || _class));
 
             _export("AubsCollapseCustomAttribute", AubsCollapseCustomAttribute);
         }

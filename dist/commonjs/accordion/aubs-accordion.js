@@ -56,7 +56,7 @@ function _initializerWarningHelper(descriptor, context) {
     throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 }
 
-var AubsAccordionCustomElement = exports.AubsAccordionCustomElement = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.BindingEngine), _dec2 = (0, _aureliaFramework.customElement)('aubs-accordion'), _dec3 = (0, _aureliaFramework.useView)('aurelia-bootstrap/accordion/aubs-accordion.html'), _dec4 = (0, _aureliaFramework.children)('aubs-accordion-group'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+var AubsAccordionCustomElement = exports.AubsAccordionCustomElement = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.BindingEngine), _dec2 = (0, _aureliaFramework.customElement)('aubs-accordion'), _dec3 = (0, _aureliaFramework.useView)('./aubs-accordion.html'), _dec4 = (0, _aureliaFramework.children)('aubs-accordion-group'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
     function AubsAccordionCustomElement(bindingEngine) {
         _classCallCheck(this, AubsAccordionCustomElement);
 

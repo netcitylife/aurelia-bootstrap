@@ -3,7 +3,7 @@ import {bootstrapOptions} from "../utils/bootstrap-options";
 
 @inject(BindingEngine)
 @customElement('aubs-accordion')
-@useView('aurelia-bootstrap/accordion/aubs-accordion.html')
+@useView('./aubs-accordion.html')
 export class AubsAccordionCustomElement {
 
     @bindable closeOthers = bootstrapOptions.accordionCloseOthers;

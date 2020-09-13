@@ -1,6 +1,8 @@
-import {bindable, bindingMode} from "aurelia-framework";
+import {bindable, bindingMode, customElement, useView} from "aurelia-framework";
 import {bootstrapOptions} from "../utils/bootstrap-options";
 
+@customElement('aubs-pagination')
+@useView('./aubs-pagination.html')
 export class AubsPaginationCustomElement {
 
     @bindable({defaultBindingMode: bindingMode.twoWay}) currentPage;

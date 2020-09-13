@@ -55,9 +55,9 @@ define(["exports", "aurelia-framework", "../utils/bootstrap-options"], function 
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _desc, _value, _class, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11;
+    var _dec, _dec2, _dec3, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6, _descriptor7, _descriptor8, _descriptor9, _descriptor10, _descriptor11;
 
-    var AubsPaginationCustomElement = exports.AubsPaginationCustomElement = (_dec = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), (_class = function () {
+    var AubsPaginationCustomElement = exports.AubsPaginationCustomElement = (_dec = (0, _aureliaFramework.customElement)('aubs-pagination'), _dec2 = (0, _aureliaFramework.useView)('./aubs-pagination.html'), _dec3 = (0, _aureliaFramework.bindable)({ defaultBindingMode: _aureliaFramework.bindingMode.twoWay }), _dec(_class = _dec2(_class = (_class2 = function () {
         function AubsPaginationCustomElement() {
             _classCallCheck(this, AubsPaginationCustomElement);
 
@@ -205,52 +205,52 @@ define(["exports", "aurelia-framework", "../utils/bootstrap-options"], function 
         };
 
         return AubsPaginationCustomElement;
-    }(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, "currentPage", [_dec], {
+    }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "currentPage", [_dec3], {
         enumerable: true,
         initializer: null
-    }), _descriptor2 = _applyDecoratedDescriptor(_class.prototype, "pageSize", [_aureliaFramework.bindable], {
+    }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "pageSize", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: null
-    }), _descriptor3 = _applyDecoratedDescriptor(_class.prototype, "totalItems", [_aureliaFramework.bindable], {
+    }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "totalItems", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: null
-    }), _descriptor4 = _applyDecoratedDescriptor(_class.prototype, "hideSinglePage", [_aureliaFramework.bindable], {
+    }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "hideSinglePage", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.paginationHideSinglePage;
         }
-    }), _descriptor5 = _applyDecoratedDescriptor(_class.prototype, "paginationSize", [_aureliaFramework.bindable], {
+    }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "paginationSize", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: null
-    }), _descriptor6 = _applyDecoratedDescriptor(_class.prototype, "boundaryLinks", [_aureliaFramework.bindable], {
+    }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "boundaryLinks", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.paginationBoundaryLinks;
         }
-    }), _descriptor7 = _applyDecoratedDescriptor(_class.prototype, "firstText", [_aureliaFramework.bindable], {
+    }), _descriptor7 = _applyDecoratedDescriptor(_class2.prototype, "firstText", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.paginationFirstText;
         }
-    }), _descriptor8 = _applyDecoratedDescriptor(_class.prototype, "lastText", [_aureliaFramework.bindable], {
+    }), _descriptor8 = _applyDecoratedDescriptor(_class2.prototype, "lastText", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.paginationLastText;
         }
-    }), _descriptor9 = _applyDecoratedDescriptor(_class.prototype, "directionLinks", [_aureliaFramework.bindable], {
+    }), _descriptor9 = _applyDecoratedDescriptor(_class2.prototype, "directionLinks", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.paginationDirectionLinks;
         }
-    }), _descriptor10 = _applyDecoratedDescriptor(_class.prototype, "previousText", [_aureliaFramework.bindable], {
+    }), _descriptor10 = _applyDecoratedDescriptor(_class2.prototype, "previousText", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.paginationPreviousText;
         }
-    }), _descriptor11 = _applyDecoratedDescriptor(_class.prototype, "nextText", [_aureliaFramework.bindable], {
+    }), _descriptor11 = _applyDecoratedDescriptor(_class2.prototype, "nextText", [_aureliaFramework.bindable], {
         enumerable: true,
         initializer: function initializer() {
             return _bootstrapOptions.bootstrapOptions.paginationNextText;
         }
-    })), _class));
+    })), _class2)) || _class) || _class);
 });

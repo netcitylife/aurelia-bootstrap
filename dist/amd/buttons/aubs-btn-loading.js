@@ -55,9 +55,9 @@ define(['exports', 'aurelia-framework', '../utils/bootstrap-options'], function 
         throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
     }
 
-    var _dec, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
+    var _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3;
 
-    var AubsBtnLoadingCustomAttribute = exports.AubsBtnLoadingCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec(_class = (_class2 = function () {
+    var AubsBtnLoadingCustomAttribute = exports.AubsBtnLoadingCustomAttribute = (_dec = (0, _aureliaFramework.inject)(Element), _dec2 = (0, _aureliaFramework.customAttribute)('aubs-btn-loading'), _dec(_class = _dec2(_class = (_class2 = function () {
         function AubsBtnLoadingCustomAttribute(element) {
             _classCallCheck(this, AubsBtnLoadingCustomAttribute);
 
@@ -135,5 +135,5 @@ define(['exports', 'aurelia-framework', '../utils/bootstrap-options'], function 
         initializer: function initializer() {
             return false;
         }
-    })), _class2)) || _class);
+    })), _class2)) || _class) || _class);
 });

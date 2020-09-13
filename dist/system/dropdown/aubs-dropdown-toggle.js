@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "./aubs-dropdown"], function (_export, _context) {
     "use strict";
 
-    var inject, AubsDropdownCustomAttribute, _dec, _class, AubsDropdownToggleCustomAttribute;
+    var inject, customAttribute, AubsDropdownCustomAttribute, _dec, _dec2, _class, AubsDropdownToggleCustomAttribute;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -14,11 +14,12 @@ System.register(["aurelia-framework", "./aubs-dropdown"], function (_export, _co
     return {
         setters: [function (_aureliaFramework) {
             inject = _aureliaFramework.inject;
+            customAttribute = _aureliaFramework.customAttribute;
         }, function (_aubsDropdown) {
             AubsDropdownCustomAttribute = _aubsDropdown.AubsDropdownCustomAttribute;
         }],
         execute: function () {
-            _export("AubsDropdownToggleCustomAttribute", AubsDropdownToggleCustomAttribute = (_dec = inject(AubsDropdownCustomAttribute, Element), _dec(_class = function () {
+            _export("AubsDropdownToggleCustomAttribute", AubsDropdownToggleCustomAttribute = (_dec = inject(AubsDropdownCustomAttribute, Element), _dec2 = customAttribute('aubs-dropdown-toggle'), _dec(_class = _dec2(_class = function () {
                 function AubsDropdownToggleCustomAttribute(dropdown, element) {
                     var _this = this;
 
@@ -41,7 +42,7 @@ System.register(["aurelia-framework", "./aubs-dropdown"], function (_export, _co
                 };
 
                 return AubsDropdownToggleCustomAttribute;
-            }()) || _class));
+            }()) || _class) || _class));
 
             _export("AubsDropdownToggleCustomAttribute", AubsDropdownToggleCustomAttribute);
         }

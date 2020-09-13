@@ -66,7 +66,7 @@ System.register(["aurelia-framework", "../utils/bootstrap-options"], function (_
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }],
         execute: function () {
-            _export("AubsAccordionCustomElement", AubsAccordionCustomElement = (_dec = inject(BindingEngine), _dec2 = customElement('aubs-accordion'), _dec3 = useView('aurelia-bootstrap/accordion/aubs-accordion.html'), _dec4 = children('aubs-accordion-group'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+            _export("AubsAccordionCustomElement", AubsAccordionCustomElement = (_dec = inject(BindingEngine), _dec2 = customElement('aubs-accordion'), _dec3 = useView('./aubs-accordion.html'), _dec4 = children('aubs-accordion-group'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
                 function AubsAccordionCustomElement(bindingEngine) {
                     _classCallCheck(this, AubsAccordionCustomElement);
 

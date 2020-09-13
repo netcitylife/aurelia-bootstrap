@@ -3,7 +3,7 @@
 System.register(["aurelia-framework", "../utils/bootstrap-options", "velocity-animate", "./aubs-accordion"], function (_export, _context) {
     "use strict";
 
-    var inject, bindable, bindingMode, containerless, bootstrapOptions, velocity, AubsAccordionCustomElement, _dec, _dec2, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, AubsAccordionGroupCustomElement;
+    var inject, bindable, bindingMode, containerless, customElement, useView, bootstrapOptions, velocity, AubsAccordionCustomElement, _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, AubsAccordionGroupCustomElement;
 
     function _initDefineProp(target, property, descriptor, context) {
         if (!descriptor) return;
@@ -60,6 +60,8 @@ System.register(["aurelia-framework", "../utils/bootstrap-options", "velocity-an
             bindable = _aureliaFramework.bindable;
             bindingMode = _aureliaFramework.bindingMode;
             containerless = _aureliaFramework.containerless;
+            customElement = _aureliaFramework.customElement;
+            useView = _aureliaFramework.useView;
         }, function (_utilsBootstrapOptions) {
             bootstrapOptions = _utilsBootstrapOptions.bootstrapOptions;
         }, function (_velocityAnimate) {
@@ -68,7 +70,7 @@ System.register(["aurelia-framework", "../utils/bootstrap-options", "velocity-an
             AubsAccordionCustomElement = _aubsAccordion.AubsAccordionCustomElement;
         }],
         execute: function () {
-            _export("AubsAccordionGroupCustomElement", AubsAccordionGroupCustomElement = (_dec = inject(AubsAccordionCustomElement), _dec2 = bindable({ defaultBindingMode: bindingMode.twoWay }), containerless(_class = _dec(_class = (_class2 = function () {
+            _export("AubsAccordionGroupCustomElement", AubsAccordionGroupCustomElement = (_dec = inject(AubsAccordionCustomElement), _dec2 = customElement('aubs-accordion-group'), _dec3 = useView('./aubs-accordion-group.html'), _dec4 = bindable({ defaultBindingMode: bindingMode.twoWay }), containerless(_class = _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
                 function AubsAccordionGroupCustomElement(accordion) {
                     _classCallCheck(this, AubsAccordionGroupCustomElement);
 
@@ -134,7 +136,7 @@ System.register(["aurelia-framework", "../utils/bootstrap-options", "velocity-an
                 initializer: function initializer() {
                     return bootstrapOptions.accordionGroupPanelClass;
                 }
-            }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec2], {
+            }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "isOpen", [_dec4], {
                 enumerable: true,
                 initializer: function initializer() {
                     return false;
@@ -144,7 +146,7 @@ System.register(["aurelia-framework", "../utils/bootstrap-options", "velocity-an
                 initializer: function initializer() {
                     return false;
                 }
-            })), _class2)) || _class) || _class));
+            })), _class2)) || _class) || _class) || _class) || _class));
 
             _export("AubsAccordionGroupCustomElement", AubsAccordionGroupCustomElement);
         }
