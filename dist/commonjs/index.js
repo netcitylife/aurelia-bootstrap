@@ -41,6 +41,7 @@ var _typeaheadHighlight = require("./typeahead/typeahead-highlight");
 var _bootstrapConfig = require("./utils/bootstrap-config");
 
 function configure(aurelia, callback) {
+    aurelia.globalResources([_aureliaPal.PLATFORM.moduleName('./accordion/aubs-accordion'), _aureliaPal.PLATFORM.moduleName('./accordion/aubs-accordion-group'), _aureliaPal.PLATFORM.moduleName('./buttons/aubs-btn-checkbox'), _aureliaPal.PLATFORM.moduleName('./buttons/aubs-btn-loading'), _aureliaPal.PLATFORM.moduleName('./buttons/aubs-btn-radio'), _aureliaPal.PLATFORM.moduleName('./collapse/aubs-collapse'), _aureliaPal.PLATFORM.moduleName('./dropdown/aubs-dropdown'), _aureliaPal.PLATFORM.moduleName('./dropdown/aubs-dropdown-toggle'), _aureliaPal.PLATFORM.moduleName('./pagination/aubs-pagination'), _aureliaPal.PLATFORM.moduleName('./popover/aubs-popover'), _aureliaPal.PLATFORM.moduleName('./tabs/aubs-tab'), _aureliaPal.PLATFORM.moduleName('./tabs/aubs-tabset'), _aureliaPal.PLATFORM.moduleName('./tooltip/aubs-tooltip'), _aureliaPal.PLATFORM.moduleName('./typeahead/aubs-typeahead'), _aureliaPal.PLATFORM.moduleName('./typeahead/typeahead-highlight')]);
 
     var config = new _bootstrapConfig.BootstrapConfig();
 
